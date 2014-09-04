@@ -46,16 +46,16 @@ class apache2 {
   exec { '/bin/bash -c "a2enmod vhost_alias"': }
   exec { '/bin/bash -c "a2enmod rewrite"': }
 
-  file { '/data/apache-2.2.22':
-    ensure => 'directory',
-    before => File['/data/apache-2.2.22/default']
-  }
-
-  file { '/data/apache-2.2.22/default':
-    ensure => link,
-    target => '/etc/apache2/sites-available/default',
-    require => File['/etc/apache2/sites-available/default']
-  }
+#  file { '/data/apache-2.2.22':
+#    ensure => 'directory',
+#    before => File['/data/apache-2.2.22/default']
+#  }
+#
+#  file { '/data/apache-2.2.22/default':
+#    ensure => link,
+#    target => '/etc/apache2/sites-available/default',
+#    require => File['/etc/apache2/sites-available/default']
+#  }
 }
 
 node default {
