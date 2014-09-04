@@ -46,6 +46,12 @@ class apache2 {
   exec { '/bin/bash -c "a2enmod vhost_alias"': }
   exec { '/bin/bash -c "a2enmod rewrite"': }
 
+  file { '/etc/apache2/conf.d/data':
+    ensure => present,
+    source => '/tmp/build/etc/apache2/conf.d/data',
+    mode => 644
+  }
+
 #  file { '/data/apache-2.2.22':
 #    ensure => 'directory',
 #    before => File['/data/apache-2.2.22/default']
