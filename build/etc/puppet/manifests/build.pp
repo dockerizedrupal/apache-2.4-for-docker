@@ -37,13 +37,25 @@ class apache2 {
 
   file { '/etc/apache2/sites-enabled/default':
     ensure => link,
-    target => '/etc/apache2/sites-available/default'
+    target => '/etc/apache2/sites-available/default',
+    require => File['/etc/apache2/sites-available/default']
   }
 
   exec { '/bin/bash -c "a2enmod actions"': }
   exec { '/bin/bash -c "a2enmod fastcgi"': }
   exec { '/bin/bash -c "a2enmod vhost_alias"': }
   exec { '/bin/bash -c "a2enmod rewrite"': }
+
+  file { '/data/apache-2.2.22':
+    ensure => 'directory',
+    before => File['/data/apache-2.2.22/default']
+  }
+
+  file { '/data/apache-2.2.22/default':
+    ensure => link,
+    target => '/etc/apache2/sites-available/default',
+    require => File['/etc/apache2/sites-available/default']
+  }
 }
 
 node default {
