@@ -1,9 +1,7 @@
 <VirtualHost *:80>
 	ServerName ${APACHE_SERVERNAME}
-	ServerAlias *.${APACHE_SERVERNAME}
 
 	DocumentRoot /var/www
-	VirtualDocumentRoot "/var/www/%1"
 
 	<Directory "/var/www">
 		Options Indexes FollowSymLinks MultiViews
@@ -11,4 +9,10 @@
 		Order allow,deny
 		Allow from all
 	</Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+	ServerAlias *.${APACHE_SERVERNAME}
+
+	VirtualDocumentRoot "/var/www/%1"
 </VirtualHost>
