@@ -10,8 +10,8 @@ RUN chmod +x /tmp/build/build.sh
 RUN /tmp/build/build.sh
 RUN rm -rf /tmp/*
 
-VOLUME ["/var/apache-2.2.22/conf.d"]
-VOLUME ["/var/apache-2.2.22/data"]
+VOLUME ["/apache-2.2.22/conf.d"]
+VOLUME ["/apache-2.2.22/data"]
 
 EXPOSE 80
 

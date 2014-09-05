@@ -1,9 +1,9 @@
 <VirtualHost *:80>
 	ServerName ${APACHE_SERVERNAME}
 
-	DocumentRoot /var/apache-2.2.22/data
+	DocumentRoot /apache-2.2.22/data
 
-	<Directory "/var/apache-2.2.22/data">
+	<Directory "/apache-2.2.22/data">
 		Options Indexes FollowSymLinks MultiViews
 		AllowOverride All
 		Order allow,deny
@@ -14,5 +14,5 @@
 <VirtualHost *:80>
 	ServerAlias *.${APACHE_SERVERNAME}
 
-	VirtualDocumentRoot "/var/apache-2.2.22/data/%1"
+	VirtualDocumentRoot "/apache-2.2.22/data/%1"
 </VirtualHost>
