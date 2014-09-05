@@ -7,7 +7,7 @@ Run the container
       --name apache \
       --net host \
       -v /var/apache-2.2.22/conf.d:/var/apache-2.2.22/conf.d \
-      -v /var/apache-2.2.22/www:/var/apache-2.2.22/www \
+      -v /var/apache-2.2.22/data:/var/apache-2.2.22/data \
       -e APACHE_SERVERNAME=example.com \
       -d \
       simpledrupalcloud/apache:2.2.22
