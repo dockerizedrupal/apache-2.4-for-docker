@@ -17,6 +17,14 @@ class apache2_supervisor {
 class apache2 {
   include apache2_supervisor
 
+  exec { 'mkdir -p /apache-2.2.22/conf.d':
+    path => ['/bin']
+  }
+
+  exec { 'mkdir -p /apache-2.2.22/data':
+    path => ['/bin']
+  }
+
   file { '/var/www':
     ensure => absent,
     recurse => true,
