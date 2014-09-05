@@ -17,8 +17,10 @@ class apache2_supervisor {
 class apache2 {
   include apache2_supervisor
 
-  file { '/var/www/index.html':
-    ensure => absent
+  file { '/var/www':
+    ensure => absent,
+    recurse => true,
+    purge => true
   }
 
   file { '/etc/apache2/sites-enabled/000-default':
