@@ -12,6 +12,7 @@ RUN rm -rf /tmp/*
 
 VOLUME ["/apache-2.2.22/conf.d"]
 VOLUME ["/apache-2.2.22/data"]
+VOLUME ["/apache-2.2.22/log"]
 
 EXPOSE 80
 
