@@ -25,6 +25,10 @@ class apache2 {
     path => ['/bin']
   }
 
+  exec { 'mkdir -p /apache-2.2.22/log':
+    path => ['/bin']
+  }
+
   file { '/var/www':
     ensure => absent,
     recurse => true,
@@ -59,6 +63,18 @@ class apache2 {
   file { '/etc/apache2/apache2.conf':
     ensure => present,
     source => '/tmp/build/etc/apache2/apache2.conf',
+    mode => 644
+  }
+
+  file { '/etc/apache2/envvars':
+    ensure => present,
+    source => '/tmp/build/etc/apache2/envvars',
+    mode => 644
+  }
+
+  file { '/etc/logrotate.d/apache2':
+    ensure => present,
+    source => '/tmp/build/etc/logrotate.d/apache2',
     mode => 644
   }
 }
