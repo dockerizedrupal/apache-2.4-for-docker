@@ -19,8 +19,6 @@ Build the image
 ---------------
 
     TMP=$(mktemp -d) \
-      && sudo apt-get install -y curl git \
-      && curl -sSL https://get.docker.io/ubuntu/ | sudo bash \
       && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-apache.git "${TMP}" \
       && cd "${TMP}" \
       && git checkout 2.2.22 \
