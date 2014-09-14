@@ -14,7 +14,6 @@ VOLUME ["/apache-2.2.22/conf.d"]
 VOLUME ["/apache-2.2.22/data"]
 VOLUME ["/apache-2.2.22/log"]
 
-EXPOSE 22
 EXPOSE 80
 
 ENTRYPOINT ["/run.sh"]
