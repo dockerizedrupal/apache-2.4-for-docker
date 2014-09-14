@@ -7,15 +7,15 @@ class packages {
   }
 }
 
-class apache2_supervisor {
-  file { '/etc/supervisor/conf.d/apache2.conf':
+class apache_supervisor {
+  file { '/etc/supervisor/conf.d/apache.conf':
     ensure => present,
-    source => '/tmp/build/etc/supervisor/conf.d/apache2.conf'
+    source => '/tmp/build/etc/supervisor/conf.d/apache.conf'
   }
 }
 
-class apache2 {
-  include apache2_supervisor
+class apache {
+  include apache_supervisor
 
   exec { 'mkdir -p /apache-2.2.22/conf.d':
     path => ['/bin']
@@ -87,9 +87,9 @@ node default {
   }
 
   include packages
-  include apache2
+  include apache
 
-  Class['packages'] -> Class['apache2']
+  Class['packages'] -> Class['apache']
 
   file { '/etc/apt/sources.list.d/non-free.list':
     ensure => present,

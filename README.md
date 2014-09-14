@@ -2,10 +2,12 @@ docker-apache-2.2.22
 ====================
 
 Run the container
+-----------------
 
     sudo docker run \
       --name apache \
-      --net host \
+      -p 127.0.0.1::22 \
+      -p 0.0.0.0:80:80 \
       -v /var/apache-2.2.22/conf.d:/apache-2.2.22/conf.d \
       -v /var/apache-2.2.22/data:/apache-2.2.22/data \
       -v /var/apache-2.2.22/log:/apache-2.2.22/log \
@@ -13,10 +15,10 @@ Run the container
       -d \
       simpledrupalcloud/apache:2.2.22
 
-Build the image yourself
-------------------------
+Build the image
+---------------
 
     git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-apache.git docker-apache
     cd docker-apache
     git checkout 2.2.22
-    sudo docker build -t apache:2.2.22 .
+    sudo docker build -t simpledrupalcloud/apache:2.2.22 .
