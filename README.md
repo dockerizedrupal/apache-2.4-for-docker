@@ -4,10 +4,11 @@ docker-apache-2.2.22
 Run the container
 -----------------
 
-    sudo docker run \
-      --name apache \
+    CONTAINER=apache && sudo docker run \
+      --name "${CONTAINER}" \
+      -h "${CONTAINER}" \
       -p 127.0.0.1::22 \
-      -p 0.0.0.0:80:80 \
+      -p 80:80 \
       -v /var/apache-2.2.22/conf.d:/apache-2.2.22/conf.d \
       -v /var/apache-2.2.22/data:/apache-2.2.22/data \
       -v /var/apache-2.2.22/log:/apache-2.2.22/log \
