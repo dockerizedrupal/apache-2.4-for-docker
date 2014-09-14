@@ -18,7 +18,11 @@ Run the container
 Build the image
 ---------------
 
-    git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-apache.git docker-apache
-    cd docker-apache
-    git checkout 2.2.22
-    sudo docker build -t simpledrupalcloud/apache:2.2.22 .
+    TMP=$(mktemp -d) \
+      && sudo apt-get install -y curl git \
+      && curl -sSL https://get.docker.io/ubuntu/ | sudo bash \
+      && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-apache.git "${TMP}" \
+      && cd "${TMP}" \
+      && git checkout 2.2.22 \
+      && sudo docker build -t simpledrupalcloud/apache:2.2.22 . \
+      && cd -
