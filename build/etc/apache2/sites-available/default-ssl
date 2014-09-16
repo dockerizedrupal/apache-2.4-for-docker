@@ -51,8 +51,8 @@
 		VirtualDocumentRoot "/apache-2.2.22/data/%1"
 
 		SSLEngine on
-		SSLCertificateFile		/etc/apache2/ssl/apache.crt
-		SSLCertificateKeyFile /etc/apache2/ssl/apache.key
+		SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
+		SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
 		#SSLCertificateChainFile /etc/apache2/ssl.crt/server-ca.crt
 		#SSLCACertificatePath /etc/ssl/certs/
 		#SSLCACertificateFile /etc/apache2/ssl.crt/ca-bundle.crt

@@ -8,6 +8,7 @@ Run the container
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -p 80:80 \
+      -p 443:443 \
       -v /var/apache-2.2.22/conf.d:/apache-2.2.22/conf.d \
       -v /var/apache-2.2.22/data:/apache-2.2.22/data \
       -v /var/apache-2.2.22/log:/apache-2.2.22/log \
