@@ -19,7 +19,7 @@ Run the container
 Build the image
 ---------------
 
-    TMP=$(mktemp -d) \
+    TMP="$(mktemp -d)" \
       && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-apache.git "${TMP}" \
       && cd "${TMP}" \
       && git checkout 2.2.22 \
