@@ -1,8 +1,10 @@
 <IfModule mod_ssl.c>
 	<VirtualHost *:443>
 		ServerName ${APACHE_SERVERNAME}
+		ServerAlias *.${APACHE_SERVERNAME}
 
 		DocumentRoot /apache-2.2.22/data
+		VirtualDocumentRoot "/apache-2.2.22/data/%1"
 
 		<Directory "/apache-2.2.22/data">
 			Options Indexes FollowSymLinks MultiViews
@@ -14,74 +16,5 @@
 		SSLEngine on
 		SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
 		SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
-		#SSLCertificateChainFile /etc/apache2/ssl.crt/server-ca.crt
-		#SSLCACertificatePath /etc/ssl/certs/
-		#SSLCACertificateFile /etc/apache2/ssl.crt/ca-bundle.crt
-		#SSLCARevocationPath /etc/apache2/ssl.crl/
-		#SSLCARevocationFile /etc/apache2/ssl.crl/ca-bundle.crl
-		#SSLVerifyClient require
-		#SSLVerifyDepth	10
-
-		#<Location />
-		#SSLRequire (		%{SSL_CIPHER} !~ m/^(EXP|NULL)/ \
-		#	and %{SSL_CLIENT_S_DN_O} eq "Snake Oil, Ltd." \
-		#	and %{SSL_CLIENT_S_DN_OU} in {"Staff", "CA", "Dev"} \
-		#	and %{TIME_WDAY} >= 1 and %{TIME_WDAY} <= 5 \
-		#	and %{TIME_HOUR} >= 8 and %{TIME_HOUR} <= 20			 ) \
-		#	 or %{REMOTE_ADDR} =~ m/^192\.76\.162\.[0-9]+$/
-		#</Location>
-
-		<FilesMatch "\.(cgi|shtml|phtml|php)$">
-			SSLOptions +StdEnvVars
-		</FilesMatch>
-		<Directory /usr/lib/cgi-bin>
-			SSLOptions +StdEnvVars
-		</Directory>
-
-		BrowserMatch "MSIE [2-6]" \
-			nokeepalive ssl-unclean-shutdown \
-			downgrade-1.0 force-response-1.0
-
-		BrowserMatch "MSIE [17-9]" ssl-unclean-shutdown
-	</VirtualHost>
-	
-	<VirtualHost *:443>
-		ServerAlias *.${APACHE_SERVERNAME}
-	
-		VirtualDocumentRoot "/apache-2.2.22/data/%1"
-
-		SSLEngine on
-		SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
-		SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
-		#SSLCertificateChainFile /etc/apache2/ssl.crt/server-ca.crt
-		#SSLCACertificatePath /etc/ssl/certs/
-		#SSLCACertificateFile /etc/apache2/ssl.crt/ca-bundle.crt
-		#SSLCARevocationPath /etc/apache2/ssl.crl/
-		#SSLCARevocationFile /etc/apache2/ssl.crl/ca-bundle.crl
-		#SSLVerifyClient require
-		#SSLVerifyDepth	10
-
-		#<Location />
-		#SSLRequire (		%{SSL_CIPHER} !~ m/^(EXP|NULL)/ \
-		#			and %{SSL_CLIENT_S_DN_O} eq "Snake Oil, Ltd." \
-		#			and %{SSL_CLIENT_S_DN_OU} in {"Staff", "CA", "Dev"} \
-		#			and %{TIME_WDAY} >= 1 and %{TIME_WDAY} <= 5 \
-		#			and %{TIME_HOUR} >= 8 and %{TIME_HOUR} <= 20			 ) \
-		#		 or %{REMOTE_ADDR} =~ m/^192\.76\.162\.[0-9]+$/
-		#</Location>
-
-		#SSLOptions +FakeBasicAuth +ExportCertData +StrictRequire
-		<FilesMatch "\.(cgi|shtml|phtml|php)$">
-			SSLOptions +StdEnvVars
-		</FilesMatch>
-		<Directory /usr/lib/cgi-bin>
-			SSLOptions +StdEnvVars
-		</Directory>
-
-		BrowserMatch "MSIE [2-6]" \
-			nokeepalive ssl-unclean-shutdown \
-			downgrade-1.0 force-response-1.0
-
-		BrowserMatch "MSIE [17-9]" ssl-unclean-shutdown
 	</VirtualHost>
 </IfModule>
