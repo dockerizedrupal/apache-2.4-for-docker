@@ -37,7 +37,8 @@ class apache {
   file { '/var/www':
     ensure => absent,
     recurse => true,
-    purge => true
+    purge => true,
+    require => Exec['usermod -d /apache-2.2.22/data www-data']
   }
 
   file { '/etc/apache2/sites-enabled/000-default':
