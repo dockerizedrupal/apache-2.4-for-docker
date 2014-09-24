@@ -29,17 +29,17 @@ class apache {
     path => ['/bin']
   }
 
-#  exec { 'usermod -d /apache-2.2.22/data www-data':
-#    path => ['/usr/sbin'],
-#    require => Exec['mkdir -p /apache-2.2.22/data']
-#  }
-#
-#  file { '/var/www':
-#    ensure => absent,
-#    recurse => true,
-#    purge => true,
-#    require => Exec['usermod -d /apache-2.2.22/data www-data']
-#  }
+  exec { 'usermod -d /apache-2.2.22/data www-data':
+    path => ['/usr/sbin'],
+    require => Exec['mkdir -p /apache-2.2.22/data']
+  }
+
+  file { '/var/www':
+    ensure => absent,
+    recurse => true,
+    purge => true,
+    require => Exec['usermod -d /apache-2.2.22/data www-data']
+  }
 
   file { '/etc/apache2/sites-enabled/000-default':
     ensure => absent
