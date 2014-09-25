@@ -104,12 +104,12 @@ node default {
     mode => 644,
   }
 
-  file { '/etc/puppet/php':
+  file { '/etc/puppet/modules':
     ensure => directory,
     recurse => true,
     purge => true,
     force => true,
-    source => '/tmp/build/etc/puppet/php',
+    source => '/tmp/build/etc/puppet/modules',
     mode => 644,
   }
 
