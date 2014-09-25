@@ -4,7 +4,7 @@ docker-apache-2.2.22
 Run the container
 -----------------
 
-    CONTAINER=apache && sudo docker run \
+    CONTAINER="apache" && sudo docker run \
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -p 80:80 \
