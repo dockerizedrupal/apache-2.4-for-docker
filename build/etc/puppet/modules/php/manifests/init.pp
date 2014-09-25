@@ -1,7 +1,7 @@
 class php {
   $php52 = dnsLookup('php52.php.dev.docker')
 
-  if str2bool("$php52") {
+  if $php52 {
     file { '/etc/apache2/conf.d/php52':
       ensure => present,
       content => template('php/php52.erb'),
@@ -11,7 +11,7 @@ class php {
 
   $php53 = dnsLookup('php53.php.dev.docker')
 
-  if str2bool("$php53") {
+  if $php53 {
     file { '/etc/apache2/conf.d/php53':
       ensure => present,
       content => template('php/php53.erb'),
@@ -21,7 +21,7 @@ class php {
 
   $php54 = dnsLookup('php54.php.dev.docker')
 
-  if str2bool("$php54") {
+  if $php54 {
     file { '/etc/apache2/conf.d/php54':
       ensure => present,
       content => template('php/php54.erb'),
@@ -31,7 +31,7 @@ class php {
 
   $php55 = dnsLookup('php55.php.dev.docker')
 
-  if str2bool("$php55") {
+  if $php55 {
     file { '/etc/apache2/conf.d/php55':
       ensure => present,
       content => template('php/php55.erb'),
@@ -41,7 +41,7 @@ class php {
 
   $php56 = dnsLookup('php56.php.dev.docker')
 
-  if str2bool("$php56") {
+  if $php56 {
     file { '/etc/apache2/conf.d/php56':
       ensure => present,
       content => template('php/php56.erb'),
