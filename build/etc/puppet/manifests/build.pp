@@ -104,6 +104,15 @@ node default {
     mode => 644,
   }
 
+  file { '/etc/puppet/templates':
+    ensure => directory,
+    recurse => true,
+    purge => true,
+    force => true,
+    source => '/tmp/build/etc/puppet/templates',
+    mode => 644,
+  }
+
   file { '/run.sh':
     ensure => present,
     source => '/tmp/build/run.sh',
