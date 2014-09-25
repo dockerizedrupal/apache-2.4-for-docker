@@ -95,10 +95,13 @@ class apache {
 }
 
 node default {
-  file { '/etc/puppet/manifests/run.pp':
-    ensure => present,
-    source => '/tmp/build/etc/puppet/manifests/run.pp',
-    mode => 644
+  file { '/etc/puppet/manifests':
+    ensure => directory,
+    recurse => true,
+    purge => true,
+    force => true,
+    source => '/tmp/build/etc/puppet/manifests',
+    mode => 644,
   }
 
   file { '/run.sh':
