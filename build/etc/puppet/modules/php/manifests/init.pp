@@ -1,5 +1,5 @@
 class php {
-  $php52 = dnsLookup('php52.php.dev.docker')
+  $php52 = $env_php52
 
   if $php52 {
     file { '/etc/apache2/conf.d/php52':
@@ -9,7 +9,7 @@ class php {
     }
   }
 
-  $php53 = dnsLookup('php53.php.dev.docker')
+  $php53 = $env_php53
 
   if $php53 {
     file { '/etc/apache2/conf.d/php53':
@@ -19,7 +19,7 @@ class php {
     }
   }
 
-  $php54 = dnsLookup('php54.php.dev.docker')
+  $php54 = $env_php54
 
   if $php54 {
     file { '/etc/apache2/conf.d/php54':
@@ -29,7 +29,7 @@ class php {
     }
   }
 
-  $php55 = dnsLookup('php55.php.dev.docker')
+  $php55 = $env_php55
 
   if $php55 {
     file { '/etc/apache2/conf.d/php55':
@@ -39,7 +39,7 @@ class php {
     }
   }
 
-  $php56 = dnsLookup('php56.php.dev.docker')
+  $php56 = $env_php56
 
   if $php56 {
     file { '/etc/apache2/conf.d/php56':
