@@ -1,5 +1,5 @@
 class php {
-  $php52 = $env_php52
+  $php52 = dnsLookup($env_php52)
 
   if $php52 {
     file { '/etc/apache2/conf.d/php52':
@@ -9,7 +9,7 @@ class php {
     }
   }
 
-  $php53 = $env_php53
+  $php53 = dnsLookup($env_php53)
 
   if $php53 {
     file { '/etc/apache2/conf.d/php53':
@@ -19,7 +19,7 @@ class php {
     }
   }
 
-  $php54 = $env_php54
+  $php54 = dnsLookup($env_php54)
 
   if $php54 {
     file { '/etc/apache2/conf.d/php54':
@@ -29,7 +29,7 @@ class php {
     }
   }
 
-  $php55 = $env_php55
+  $php55 = dnsLookup($env_php55)
 
   if $php55 {
     file { '/etc/apache2/conf.d/php55':
@@ -39,7 +39,7 @@ class php {
     }
   }
 
-  $php56 = $env_php56
+  $php56 = dnsLookup($env_php56)
 
   if $php56 {
     file { '/etc/apache2/conf.d/php56':
