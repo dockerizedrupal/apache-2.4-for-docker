@@ -2,7 +2,7 @@
   AddHandler php .php
 
   Alias /php52 /apache-2.2.22/data/php55
-  FastCgiExternalServer /apache-2.2.22/data/php55 -host <%= @php55 %>:5517 -idle-timeout 300 -pass-header Authorization
+  FastCgiExternalServer /apache-2.2.22/data/php55 -host <%= @php55_port %> -idle-timeout 300 -pass-header Authorization
 
   <Location /php55>
     Order deny,allow
