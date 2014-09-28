@@ -14,7 +14,7 @@ if [ -z "${PHP52_PORT_9000_TCP}" ] && [ -n "${PHP52_PORT_9000_TCP_ADDR}" ] && [ 
   PHP52_PORT_9000_TCP="tcp://${PHP52_PORT_9000_TCP_ADDR}:${PHP52_PORT_9000_TCP_PORT}"
 fi
 
-export FACTER_PHP52_PORT_9000_TCP="${PHP52_PORT_9000_TCP}"
+export FACTER_PHP52_PORT_9000_TCP="$(echo "${PHP52_PORT_9000_TCP}" | sed 's/tcp:\/\///')"
 
 if [ -z "${PHP53_PORT_9000_TCP}" ] && [ -n "${PHP53_PORT_9000_TCP_ADDR}" ] && [ -n "${PHP53_PORT_9000_TCP_PORT}" ]; then
   IP="$(dnsLookup "${PHP53_PORT_9000_TCP_ADDR}")"
@@ -26,7 +26,7 @@ if [ -z "${PHP53_PORT_9000_TCP}" ] && [ -n "${PHP53_PORT_9000_TCP_ADDR}" ] && [ 
   PHP53_PORT_9000_TCP="tcp://${PHP53_PORT_9000_TCP_ADDR}:${PHP53_PORT_9000_TCP_PORT}"
 fi
 
-export FACTER_PHP53_PORT_9000_TCP="${PHP53_PORT_9000_TCP}"
+export FACTER_PHP53_PORT_9000_TCP="$(echo "${PHP53_PORT_9000_TCP}" | sed 's/tcp:\/\///')"
 
 if [ -z "${PHP54_PORT_9000_TCP}" ] && [ -n "${PHP54_PORT_9000_TCP_ADDR}" ] && [ -n "${PHP54_PORT_9000_TCP_PORT}" ]; then
   IP="$(dnsLookup "${PHP54_PORT_9000_TCP_ADDR}")"
@@ -38,7 +38,7 @@ if [ -z "${PHP54_PORT_9000_TCP}" ] && [ -n "${PHP54_PORT_9000_TCP_ADDR}" ] && [ 
   PHP54_PORT_9000_TCP="tcp://${PHP54_PORT_9000_TCP_ADDR}:${PHP54_PORT_9000_TCP_PORT}"
 fi
 
-export FACTER_PHP54_PORT_9000_TCP="${PHP54_PORT_9000_TCP}"
+export FACTER_PHP54_PORT_9000_TCP="$(echo "${PHP54_PORT_9000_TCP}" | sed 's/tcp:\/\///')"
 
 if [ -z "${PHP55_PORT_9000_TCP}" ] && [ -n "${PHP55_PORT_9000_TCP_ADDR}" ] && [ -n "${PHP55_PORT_9000_TCP_PORT}" ]; then
   IP="$(dnsLookup "${PHP55_PORT_9000_TCP_ADDR}")"
@@ -50,7 +50,7 @@ if [ -z "${PHP55_PORT_9000_TCP}" ] && [ -n "${PHP55_PORT_9000_TCP_ADDR}" ] && [ 
   PHP55_PORT_9000_TCP="tcp://${PHP55_PORT_9000_TCP_ADDR}:${PHP55_PORT_9000_TCP_PORT}"
 fi
 
-export FACTER_PHP55_PORT_9000_TCP="${PHP55_PORT_9000_TCP}"
+export FACTER_PHP55_PORT_9000_TCP="$(echo "${PHP55_PORT_9000_TCP}" | sed 's/tcp:\/\///')"
 
 if [ -z "${PHP56_PORT_9000_TCP}" ] && [ -n "${PHP56_PORT_9000_TCP_ADDR}" ] && [ -n "${PHP56_PORT_9000_TCP_PORT}" ]; then
   IP="$(dnsLookup "${PHP56_PORT_9000_TCP_ADDR}")"
@@ -62,7 +62,7 @@ if [ -z "${PHP56_PORT_9000_TCP}" ] && [ -n "${PHP56_PORT_9000_TCP_ADDR}" ] && [ 
   PHP56_PORT_9000_TCP="tcp://${PHP56_PORT_9000_TCP_ADDR}:${PHP56_PORT_9000_TCP_PORT}"
 fi
 
-export FACTER_PHP56_PORT_9000_TCP="${PHP56_PORT_9000_TCP}"
+export FACTER_PHP56_PORT_9000_TCP="$(echo "${PHP56_PORT_9000_TCP}" | sed 's/tcp:\/\///')"
 
 env
 
