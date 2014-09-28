@@ -1,8 +1,6 @@
-docker-apache-2.2.22
-====================
+# docker-apache-2.2.22
 
-Run the container
------------------
+## Run the container
 
     CONTAINER="apache" && sudo docker run \
       --name "${CONTAINER}" \
@@ -21,8 +19,7 @@ Run the container
       -d \
       simpledrupalcloud/apache:2.2.22
 
-Build the image
----------------
+## Build the image
 
     TMP="$(mktemp -d)" \
       && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-apache.git "${TMP}" \
