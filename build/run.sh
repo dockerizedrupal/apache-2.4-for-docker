@@ -4,7 +4,7 @@ dnsLookup() {
   echo "$(host "${1}" | awk '/has address/ { print $4 }')"
 }
 
-if [ -z "${PHP52_PORT_9000_TCP}" ]; then
+if [ -z "${PHP52_PORT_9000_TCP}" ] && [ -n "${PHP52_PORT_9000_TCP_ADDR}" ] && [ -n "${PHP52_PORT_9000_TCP_PORT}" ]; then
   IP="$(dnsLookup "${PHP52_PORT_9000_TCP_ADDR}")"
 
   if [ ! -z "${IP}" ]; then
@@ -15,7 +15,7 @@ if [ -z "${PHP52_PORT_9000_TCP}" ]; then
 fi
 
 
-if [ -z "${PHP53_PORT_9000_TCP}" ]; then
+if [ -z "${PHP53_PORT_9000_TCP}" ] && [ -n "${PHP53_PORT_9000_TCP_ADDR}" ] && [ -n "${PHP53_PORT_9000_TCP_PORT}" ]; then
   IP="$(dnsLookup "${PHP53_PORT_9000_TCP_ADDR}")"
 
   if [ ! -z "${IP}" ]; then
@@ -25,7 +25,7 @@ if [ -z "${PHP53_PORT_9000_TCP}" ]; then
   export FACTER_PHP53_PORT_9000_TCP="tcp://${PHP53_PORT_9000_TCP_ADDR}:${PHP53_PORT_9000_TCP_PORT}"
 fi
 
-if [ -z "${PHP54_PORT_9000_TCP}" ]; then
+if [ -z "${PHP54_PORT_9000_TCP}" ] && [ -n "${PHP54_PORT_9000_TCP_ADDR}" ] && [ -n "${PHP54_PORT_9000_TCP_PORT}" ]; then
   IP="$(dnsLookup "${PHP54_PORT_9000_TCP_ADDR}")"
 
   if [ ! -z "${IP}" ]; then
@@ -35,7 +35,7 @@ if [ -z "${PHP54_PORT_9000_TCP}" ]; then
   export FACTER_PHP54_PORT_9000_TCP="tcp://${PHP54_PORT_9000_TCP_ADDR}:${PHP54_PORT_9000_TCP_PORT}"
 fi
 
-if [ -z "${PHP55_PORT_9000_TCP}" ]; then
+if [ -z "${PHP55_PORT_9000_TCP}" ] && [ -n "${PHP55_PORT_9000_TCP_ADDR}" ] && [ -n "${PHP55_PORT_9000_TCP_PORT}" ]; then
   IP="$(dnsLookup "${PHP55_PORT_9000_TCP_ADDR}")"
 
   if [ ! -z "${IP}" ]; then
@@ -45,7 +45,7 @@ if [ -z "${PHP55_PORT_9000_TCP}" ]; then
   export FACTER_PHP55_PORT_9000_TCP="tcp://${PHP55_PORT_9000_TCP_ADDR}:${PHP55_PORT_9000_TCP_PORT}"
 fi
 
-if [ -z "${PHP56_PORT_9000_TCP}" ]; then
+if [ -z "${PHP56_PORT_9000_TCP}" ] && [ -n "${PHP56_PORT_9000_TCP_ADDR}" ] && [ -n "${PHP56_PORT_9000_TCP_PORT}" ]; then
   IP="$(dnsLookup "${PHP56_PORT_9000_TCP_ADDR}")"
 
   if [ ! -z "${IP}" ]; then
