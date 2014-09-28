@@ -1,6 +1,4 @@
 class php {
-  $php52_port_9000_tcp = dnsLookup($php52_port_9000_tcp)
-
   if $php52_port_9000_tcp {
     file { '/etc/apache2/conf.d/php52':
       ensure => present,
@@ -8,8 +6,6 @@ class php {
       mode => 644
     }
   }
-
-  $php53_port_9000_tcp = dnsLookup($php53_port_9000_tcp)
 
   if $php53_port_9000_tcp {
     file { '/etc/apache2/conf.d/php53':
@@ -19,8 +15,6 @@ class php {
     }
   }
 
-  $php54_port_9000_tcp = dnsLookup($php54_port_9000_tcp)
-
   if $php54_port_9000_tcp {
     file { '/etc/apache2/conf.d/php54':
       ensure => present,
@@ -29,8 +23,6 @@ class php {
     }
   }
 
-  $php55_port_9000_tcp = dnsLookup($php55_port_9000_tcp)
-
   if $php55_port_9000_tcp {
     file { '/etc/apache2/conf.d/php55':
       ensure => present,
@@ -38,9 +30,7 @@ class php {
       mode => 644
     }
   }
-
-  $php56_port_9000_tcp = dnsLookup($php56_port_9000_tcp)
-
+  
   if $php56_port_9000_tcp {
     file { '/etc/apache2/conf.d/php56':
       ensure => present,
