@@ -1,8 +1,6 @@
-docker-apache
-=============
+# docker-apache
 
-Apache HTTP Server 2.2.22
--------------------------
+## Apache HTTP Server 2.2.22
 
 ### Run the container
 
