@@ -1,7 +1,7 @@
 <IfModule mod_fastcgi.c>
   AddHandler php .php
 
-  Alias /php52 /apache-2.2.22/data/php56
+  Alias /php56 /apache-2.2.22/data/php56
   FastCgiExternalServer /apache-2.2.22/data/php56 -host <%= @php56_port_9000_tcp %> -idle-timeout 300 -pass-header Authorization
 
   <Location /php56>
