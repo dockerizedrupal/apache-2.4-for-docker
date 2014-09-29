@@ -6,7 +6,7 @@ class apache {
   file { '/etc/apache2/sites-available/default':
     ensure => present,
     content => template('apache/default.erb'),
-    mode => 644,
+    mode => 644
   }
 
   file { '/etc/apache2/sites-enabled/default':
@@ -18,7 +18,7 @@ class apache {
   file { '/etc/apache2/sites-available/default-ssl':
     ensure => present,
     content => template('apache/default-ssl.erb'),
-    mode => 644,
+    mode => 644
   }
 
   file { '/etc/apache2/sites-enabled/default-ssl':
