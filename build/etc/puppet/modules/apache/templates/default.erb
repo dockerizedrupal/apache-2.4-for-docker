@@ -1,7 +1,7 @@
 <VirtualHost *:80>
-	ServerName <%= @apache_servername %>
+	ServerAlias *.<%= @apache_servername %>
 
-	DocumentRoot /apache-2.2.22/data
+	VirtualDocumentRoot "/apache-2.2.22/data/%1"
 
 	<Directory "/apache-2.2.22/data">
 		Options Indexes FollowSymLinks MultiViews
@@ -12,9 +12,9 @@
 </VirtualHost>
 
 <VirtualHost *:80>
-	ServerAlias *.<%= @apache_servername %>
+	ServerName <%= @apache_servername %>
 
-	VirtualDocumentRoot "/apache-2.2.22/data/%1"
+	DocumentRoot /apache-2.2.22/data
 
 	<Directory "/apache-2.2.22/data">
 		Options Indexes FollowSymLinks MultiViews
