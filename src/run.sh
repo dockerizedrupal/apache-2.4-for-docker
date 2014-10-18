@@ -78,6 +78,6 @@ export FACTER_PHP56_PORT_9000_TCP="$(echo "${PHP56_PORT_9000_TCP}" | sed 's/tcp:
 
 export FACTER_APACHE_SERVERNAME="${APACHE_SERVERNAME}"
 
-puppet apply /etc/puppet/manifests/run.pp
+puppet apply --modulepath=/src/run/modules /src/run/run.pp
 
 /usr/bin/supervisord

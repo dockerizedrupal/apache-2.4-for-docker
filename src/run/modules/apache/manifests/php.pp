@@ -1,4 +1,4 @@
-class php {
+class apache::php {
   if $php52_port_9000_tcp {
     file { '/etc/apache2/conf.d/php52':
       ensure => present,
@@ -30,7 +30,7 @@ class php {
       mode => 644
     }
   }
-  
+
   if $php56_port_9000_tcp {
     file { '/etc/apache2/conf.d/php56':
       ensure => present,
