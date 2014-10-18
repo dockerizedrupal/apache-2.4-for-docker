@@ -51,6 +51,6 @@ class apache {
 
   file { '/etc/supervisor/conf.d/apache.conf':
     ensure => present,
-    source => 'puppet:///modules/apache/supervisor/conf.d/apache.conf'
+    source => 'puppet:///modules/apache/etc/supervisor/conf.d/apache.conf'
   }
 }
