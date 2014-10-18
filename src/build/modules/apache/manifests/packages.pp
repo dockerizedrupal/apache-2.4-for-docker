@@ -15,7 +15,6 @@ class apache::packages {
       'libapache2-mod-fastcgi'
     ]:
     ensure => present,
-    require => Exec['apt-get update'],
-    before => Class['apache']
+    require => Exec['apt-get update']
   }
 }

@@ -1,5 +1,5 @@
 class apache {
-  include apache::packages
+  require apache::packages
 
   exec { 'mkdir -p /apache-2.2.22/conf.d':
     path => ['/bin']
