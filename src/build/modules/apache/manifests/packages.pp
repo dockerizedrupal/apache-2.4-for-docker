@@ -1,7 +1,7 @@
 class apache::packages {
   file { '/etc/apt/sources.list.d/non-free.list':
     ensure => present,
-    source => 'puppet;///apache/etc/apt/sources.list.d/non-free.list',
+    source => 'puppet:///apache/etc/apt/sources.list.d/non-free.list',
     mode => 644
   }
 

@@ -33,24 +33,24 @@ class apache {
 
   file { '/etc/apache2/apache2.conf':
     ensure => present,
-    source => 'puppet;///apache/etc/apache2/apache2.conf',
+    source => 'puppet:///apache/etc/apache2/apache2.conf',
     mode => 644
   }
 
   file { '/etc/apache2/envvars':
     ensure => present,
-    source => 'puppet;///apache/etc/apache2/envvars',
+    source => 'puppet:///apache/etc/apache2/envvars',
     mode => 644
   }
 
   file { '/etc/logrotate.d/apache2':
     ensure => present,
-    source => 'puppet;///apache/etc/logrotate.d/apache2',
+    source => 'puppet:///apache/etc/logrotate.d/apache2',
     mode => 644
   }
 
   file { '/etc/supervisor/conf.d/apache.conf':
     ensure => present,
-    source => 'puppet;///apache/supervisor/conf.d/apache.conf'
+    source => 'puppet:///apache/supervisor/conf.d/apache.conf'
   }
 }
