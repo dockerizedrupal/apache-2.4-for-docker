@@ -7,11 +7,11 @@
       -h "${CONTAINER}" \
       -p 80:80 \
       -p 443:443 \
-      --link php52-dev:php52 \
-      --link php53-dev:php53 \
-      --link php54-dev:php54 \
-      --link php55-dev:php55 \
-      --link php56-dev:php56 \
+      --link php52:php52 \
+      --link php53:php53 \
+      --link php54:php54 \
+      --link php55:php55 \
+      --link php56:php56 \
       -v /var/www:/apache-2.2.22/data \
       -e APACHE_SERVERNAME="example.com" \
       -d \
