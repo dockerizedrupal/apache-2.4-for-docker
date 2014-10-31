@@ -20,4 +20,8 @@ class apache {
     ensure => present,
     source => 'puppet:///modules/apache/etc/supervisor/conf.d/apache.conf'
   }
+
+  file { '/etc/apache2/sites-enabled/000-default':
+    ensure => absent
+  }
 }

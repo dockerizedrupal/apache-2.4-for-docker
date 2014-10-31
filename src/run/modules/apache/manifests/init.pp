@@ -1,8 +1,4 @@
 class apache {
-  file { '/etc/apache2/sites-enabled/000-default':
-    ensure => absent
-  }
-
   file { '/etc/apache2/sites-available/default':
     ensure => present,
     content => template('apache/default.erb'),
