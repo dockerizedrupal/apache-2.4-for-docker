@@ -1,9 +1,8 @@
-apache:
-  build: .
-  image: simpledrupalcloud/apache:2.2.22-dev
-  hostname: apache
+httpd:
+  image: simpledrupalcloud/httpd:2.2.22-dev
+  hostname: httpd
   ports:
     - "80:80"
     - "443:443"
   volumes:
-    - /var/docker/apache-2.2.22/data:/apache-2.2.22/data
+    - /var/docker/httpd-2.2.22/data:/httpd-2.2.22/data
