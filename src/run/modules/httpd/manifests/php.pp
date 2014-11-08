@@ -1,8 +1,8 @@
-class apache::php {
+class httpd::php {
   if $php52_port_9000_tcp {
     file { '/etc/apache2/conf.d/php52':
       ensure => present,
-      content => template('apache/php52.erb'),
+      content => template('httpd/php52.erb'),
       mode => 644
     }
   }
@@ -10,7 +10,7 @@ class apache::php {
   if $php53_port_9000_tcp {
     file { '/etc/apache2/conf.d/php53':
       ensure => present,
-      content => template('apache/php53.erb'),
+      content => template('httpd/php53.erb'),
       mode => 644
     }
   }
@@ -18,7 +18,7 @@ class apache::php {
   if $php54_port_9000_tcp {
     file { '/etc/apache2/conf.d/php54':
       ensure => present,
-      content => template('apache/php54.erb'),
+      content => template('httpd/php54.erb'),
       mode => 644
     }
   }
@@ -26,7 +26,7 @@ class apache::php {
   if $php55_port_9000_tcp {
     file { '/etc/apache2/conf.d/php55':
       ensure => present,
-      content => template('apache/php55.erb'),
+      content => template('httpd/php55.erb'),
       mode => 644
     }
   }
@@ -34,7 +34,7 @@ class apache::php {
   if $php56_port_9000_tcp {
     file { '/etc/apache2/conf.d/php56':
       ensure => present,
-      content => template('apache/php56.erb'),
+      content => template('httpd/php56.erb'),
       mode => 644
     }
   }

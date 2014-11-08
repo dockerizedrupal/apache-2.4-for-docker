@@ -1,4 +1,4 @@
 node default {
-  include apache
-  include apache::php
+  include httpd
+  include httpd::php
 }

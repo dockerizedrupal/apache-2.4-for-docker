@@ -74,14 +74,6 @@ fi
 
 export FACTER_PHP56_PORT_9000_TCP="$(echo "${PHP56_PORT_9000_TCP}" | sed 's/tcp:\/\///')"
 
-# Apache HTTP Server
-
-if [ -z "${APACHE_SERVERNAME}" ]; then
-  APACHE_SERVERNAME="localhost"
-fi
-
-export FACTER_APACHE_SERVERNAME="${APACHE_SERVERNAME}"
-
 puppet apply --modulepath=/src/run/modules /src/run/run.pp
 
 /usr/bin/supervisord
