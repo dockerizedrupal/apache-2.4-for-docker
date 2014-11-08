@@ -1,5 +1,7 @@
 # docker-apache-2.2.22-dev
 
+A [Docker](https://docker.com/) container for [Apache HTTP Server](http://httpd.apache.org/).
+
 ## Run the container
 
 Using the `docker` command:
