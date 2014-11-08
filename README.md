@@ -58,3 +58,7 @@ A [Docker](https://docker.com/) container for [Apache HTTP Server](http://httpd.
       && git checkout 2.2.22-dev \
       && sudo docker build -t simpledrupalcloud/httpd:2.2.22 . \
       && cd -
+
+## License
+
+**MIT**
