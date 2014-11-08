@@ -1,10 +1,39 @@
-# docker-apache
+# docker-httpd
+
+A [Docker](https://docker.com/) container for [Apache HTTP Server](http://httpd.apache.org/).
 
 ## Apache HTTP Server 2.2.22
 
-### Run the container
+### Stable release
 
-    CONTAINER=apache && sudo docker run \
+#### Run the container
+
+    CONTAINER="httpd" && sudo docker run \
+      --name "${CONTAINER}" \
+      -h "${CONTAINER}" \
+      -p 80:80 \
+      -p 443:443 \
+      -v /var/httpd-2.2.22/conf.d:/httpd-2.2.22/conf.d \
+      -v /var/httpd-2.2.22/data:/httpd-2.2.22/data \
+      -v /var/httpd-2.2.22/log:/httpd-2.2.22/log \
+      -e HTTPD_SERVERNAME=example.com \
+      -d \
+      simpledrupalcloud/httpd:2.2.22
+
+#### Build the image
+
+    TMP="$(mktemp -d)" \
+      && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-httpd.git "${TMP}" \
+      && cd "${TMP}" \
+      && git checkout 2.2.22 \
+      && sudo docker build -t simpledrupalcloud/httpd:2.2.22 . \
+      && cd -
+
+### Development release
+
+#### Run the container
+
+    CONTAINER="httpd" && sudo docker run \
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -p 80:80 \
@@ -14,18 +43,18 @@
       --link php54:php54 \
       --link php55:php55 \
       --link php56:php56 \
-      -v /var/apache-2.2.22/conf.d:/apache-2.2.22/conf.d \
-      -v /var/apache-2.2.22/data:/apache-2.2.22/data \
-      -v /var/apache-2.2.22/log:/apache-2.2.22/log \
-      -e APACHE_SERVERNAME=example.com \
+      -v /var/httpd-2.2.22/conf.d:/httpd-2.2.22/conf.d \
+      -v /var/httpd-2.2.22/data:/httpd-2.2.22/data \
+      -v /var/httpd-2.2.22/log:/httpd-2.2.22/log \
+      -e HTTPD_SERVERNAME="example.com" \
       -d \
-      simpledrupalcloud/apache:2.2.22
+      simpledrupalcloud/httpd:2.2.22-dev
 
-### Build the image
+#### Build the image
 
     TMP="$(mktemp -d)" \
-      && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-apache.git "${TMP}" \
+      && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-httpd.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 2.2.22 \
-      && sudo docker build -t simpledrupalcloud/apache:2.2.22 . \
+      && git checkout 2.2.22-dev \
+      && sudo docker build -t simpledrupalcloud/httpd:2.2.22 . \
       && cd -
