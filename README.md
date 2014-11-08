@@ -2,6 +2,8 @@
 
 ## Run the container
 
+Using the **docker** command:
+
     CONTAINER="apache" && sudo docker run \
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
@@ -16,6 +18,8 @@
       -e APACHE_SERVERNAME="example.com" \
       -d \
       simpledrupalcloud/apache:2.2.22-dev
+      
+Using the Fig command
 
 ## Build the image
 
@@ -25,3 +29,7 @@
       && git checkout 2.2.22-dev \
       && sudo docker build -t simpledrupalcloud/apache:2.2.22-dev . \
       && cd -
+
+## License
+
+**MIT**
