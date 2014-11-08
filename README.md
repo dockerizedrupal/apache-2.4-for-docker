@@ -4,7 +4,7 @@ A [Docker](https://docker.com/) container for [Apache HTTP Server](http://httpd.
 
 ## Apache HTTP Server 2.2.22
 
-### Stable release
+### STABLE RELEASE
 
 #### Run the container
 
@@ -29,7 +29,7 @@ A [Docker](https://docker.com/) container for [Apache HTTP Server](http://httpd.
       && sudo docker build -t simpledrupalcloud/httpd:2.2.22 . \
       && cd -
 
-### Development release
+### DEVELOPMENT RELEASE
 
 #### Run the container
 
