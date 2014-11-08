@@ -2,7 +2,9 @@
 
 A [Docker](https://docker.com/) container for [Apache HTTP Server](http://httpd.apache.org/).
 
-## Run the container
+## Apache HTTP Server 2.2.22
+
+### Run the container
 
 Using the `docker` command:
 
@@ -23,7 +25,7 @@ Using the `fig` command
       && git checkout 2.2.22-dev \
       && fig up
 
-## Build the image
+### Build the image
 
     TMP="$(mktemp -d)" \
       && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-httpd.git "${TMP}" \
