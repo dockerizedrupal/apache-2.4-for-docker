@@ -1,10 +1,6 @@
 <IfModule mod_ssl.c>
   <VirtualHost *:443>
-    ServerName <%= @apache_servername %>
-    ServerAlias *.<%= @apache_servername %>
-
     DocumentRoot /apache-2.2.22/data
-    VirtualDocumentRoot "/apache-2.2.22/data/%1"
 
     <Directory "/apache-2.2.22/data">
       Options Indexes FollowSymLinks MultiViews
