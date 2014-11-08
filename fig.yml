@@ -6,4 +6,4 @@ apache:
     - "80:80"
     - "443:443"
   volumes:
-    - /var/apache-2.2.22/data:/apache-2.2.22/data
+    - /var/docker/apache-2.2.22/data:/apache-2.2.22/data

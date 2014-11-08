@@ -12,7 +12,7 @@
       --link php54:php54 \
       --link php55:php55 \
       --link php56:php56 \
-      -v /var/www:/apache-2.2.22/data \
+      -v /var/docker/apache-2.2.22/data:/apache-2.2.22/data \
       -e APACHE_SERVERNAME="example.com" \
       -d \
       simpledrupalcloud/apache:2.2.22-dev
