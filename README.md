@@ -2,7 +2,7 @@
 
 ## Run the container
 
-Using the **docker** command:
+Using the `docker` command:
 
     CONTAINER="apache" && sudo docker run \
       --name "${CONTAINER}" \
@@ -19,7 +19,13 @@ Using the **docker** command:
       -d \
       simpledrupalcloud/apache:2.2.22-dev
       
-Using the Fig command
+Using the `fig` command
+
+    TMP="$(mktemp -d)" \
+      && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-apache.git "${TMP}" \
+      && cd "${TMP}" \
+      && git checkout 2.2.22-dev \
+      && fig up
 
 ## Build the image
 
