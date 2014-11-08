@@ -1,25 +1,25 @@
 <VirtualHost *:80>
-	ServerAlias *.<%= @apache_servername %>
+  ServerAlias *.<%= @apache_servername %>
 
-	VirtualDocumentRoot "/apache-2.2.22/data/%1"
+  VirtualDocumentRoot "/apache-2.2.22/data/%1"
 
-	<Directory "/apache-2.2.22/data">
-		Options Indexes FollowSymLinks MultiViews
-		AllowOverride All
-		Order allow,deny
-		Allow from all
-	</Directory>
+  <Directory "/apache-2.2.22/data">
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+  </Directory>
 </VirtualHost>
 
 <VirtualHost *:80>
-	ServerName <%= @apache_servername %>
+  ServerName <%= @apache_servername %>
 
-	DocumentRoot /apache-2.2.22/data
+  DocumentRoot /apache-2.2.22/data
 
-	<Directory "/apache-2.2.22/data">
-		Options Indexes FollowSymLinks MultiViews
-		AllowOverride All
-		Order allow,deny
-		Allow from all
-	</Directory>
+  <Directory "/apache-2.2.22/data">
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+  </Directory>
 </VirtualHost>
