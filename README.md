@@ -1,4 +1,4 @@
-# docker-apache-2.2.22-dev
+# docker-httpd-2.2.22-dev
 
 A [Docker](https://docker.com/) container for [Apache HTTP Server](http://httpd.apache.org/).
 
@@ -6,19 +6,19 @@ A [Docker](https://docker.com/) container for [Apache HTTP Server](http://httpd.
 
 Using the `docker` command:
 
-    CONTAINER="apache" && sudo docker run \
+    CONTAINER="httpd" && sudo docker run \
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -p 80:80 \
       -p 443:443 \
-      -v /var/docker/apache-2.2.22/data:/apache-2.2.22/data \
+      -v /var/docker/httpd-2.2.22/data:/httpd-2.2.22/data \
       -d \
-      simpledrupalcloud/apache:2.2.22-dev
+      simpledrupalcloud/httpd:2.2.22-dev
       
 Using the `fig` command
 
     TMP="$(mktemp -d)" \
-      && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-apache.git "${TMP}" \
+      && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-httpd.git "${TMP}" \
       && cd "${TMP}" \
       && git checkout 2.2.22-dev \
       && fig up
@@ -26,10 +26,10 @@ Using the `fig` command
 ## Build the image
 
     TMP="$(mktemp -d)" \
-      && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-apache.git "${TMP}" \
+      && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-httpd.git "${TMP}" \
       && cd "${TMP}" \
       && git checkout 2.2.22-dev \
-      && sudo docker build -t simpledrupalcloud/apache:2.2.22-dev . \
+      && sudo docker build -t simpledrupalcloud/httpd:2.2.22-dev . \
       && cd -
 
 ## License
