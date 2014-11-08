@@ -23,3 +23,14 @@
     Allow from all
   </Directory>
 </VirtualHost>
+
+<VirtualHost *:80>
+  DocumentRoot /apache-2.2.22/data
+
+  <Directory "/apache-2.2.22/data">
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+  </Directory>
+</VirtualHost>
