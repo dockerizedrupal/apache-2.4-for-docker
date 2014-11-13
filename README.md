@@ -8,7 +8,7 @@ A [Docker](https://docker.com/) container for [Apache HTTP Server](http://httpd.
 
 Using the `docker` command:
 
-    CONTAINER="httpd-dev" && sudo docker run \
+    CONTAINER="httpd" && sudo docker run \
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -p 80:80 \
