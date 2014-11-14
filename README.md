@@ -2,7 +2,7 @@
 
 A [Docker](https://docker.com/) container for [Apache HTTP Server](http://httpd.apache.org/).
 
-## Apache HTTP Server 2.2.22 (STABLE BRANCH)
+## Apache HTTP Server 2.2.22 (DEVELOPMENT BRANCH)
 
 ### Run the container
 
