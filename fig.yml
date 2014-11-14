@@ -1,5 +1,5 @@
 httpd:
-  image: simpledrupalcloud/httpd:2.2.22-dev
+  image: simpledrupalcloud/httpd:2.2.22
   hostname: httpd
   ports:
     - "80:80"
@@ -7,7 +7,7 @@ httpd:
   volumes_from:
     - data
 data:
-  image: simpledrupalcloud/data:dev
+  image: simpledrupalcloud/data:latest
   hostname: data
   volumes:
     - /var/docker/httpd-2.2.22/data:/httpd-2.2.22/data
