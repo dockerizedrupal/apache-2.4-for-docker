@@ -6,8 +6,8 @@ httpd:
     - "443:443"
   volumes_from:
     - data
-data:
+httpddata:
   image: simpledrupalcloud/data:dev
-  hostname: data
+  hostname: httpddata
   volumes:
     - .:/httpd-2.2.22/data

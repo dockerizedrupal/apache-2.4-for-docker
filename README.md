@@ -8,7 +8,7 @@ A [Docker](https://docker.com/) container for [Apache HTTP Server](http://httpd.
 
 Using the `docker` command:
 
-    CONTAINER="data" && sudo docker run \
+    CONTAINER="httpddata" && sudo docker run \
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -v $(pwd):/httpd-2.2.22/data \
@@ -19,7 +19,7 @@ Using the `docker` command:
       -h "${CONTAINER}" \
       -p 80:80 \
       -p 443:443 \
-      --volumes-from data \
+      --volumes-from httpddata \
       -d \
       simpledrupalcloud/httpd:2.2.22-dev
       
