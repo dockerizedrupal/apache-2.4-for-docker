@@ -11,7 +11,7 @@ Using the `docker` command:
     CONTAINER="data" && sudo docker run \
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
-      -v /var/docker/httpd-2.2.22/data:/httpd-2.2.22/data \
+      -v $(pwd):/httpd-2.2.22/data \
       simpledrupalcloud/data:dev
   
     CONTAINER="httpd" && sudo docker run \
