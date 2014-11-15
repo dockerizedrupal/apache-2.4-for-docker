@@ -10,4 +10,4 @@ data:
   image: simpledrupalcloud/data:latest
   hostname: data
   volumes:
-    - /var/docker/httpd-2.2.22/data:/httpd-2.2.22/data
+    - .:/httpd-2.2.22/data
