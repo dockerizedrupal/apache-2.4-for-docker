@@ -1,7 +1,7 @@
 class httpd {
   file { '/etc/apache2/sites-available/default':
     ensure => present,
-    content => template('httpd/default.erb'),
+    content => 'puppet:///modules/httpd/etc/apache2/sites-available/default',
     mode => 644
   }
 
@@ -13,7 +13,7 @@ class httpd {
 
   file { '/etc/apache2/sites-available/default-ssl':
     ensure => present,
-    content => template('httpd/default-ssl.erb'),
+    content => 'puppet:///modules/httpd/etc/apache2/sites-available/default-ssl',
     mode => 644
   }
 
