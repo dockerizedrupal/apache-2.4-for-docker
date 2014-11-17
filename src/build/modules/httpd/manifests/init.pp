@@ -23,7 +23,7 @@ class httpd {
 
   file { '/etc/apache2/sites-available/default':
     ensure => present,
-    content => 'puppet:///modules/httpd/etc/apache2/sites-available/default',
+    source => 'puppet:///modules/httpd/etc/apache2/sites-available/default',
     mode => 644
   }
 
@@ -35,7 +35,7 @@ class httpd {
 
   file { '/etc/apache2/sites-available/default-ssl':
     ensure => present,
-    content => 'puppet:///modules/httpd/etc/apache2/sites-available/default-ssl',
+    source => 'puppet:///modules/httpd/etc/apache2/sites-available/default-ssl',
     mode => 644
   }
 
