@@ -1,5 +1,6 @@
 class httpd {
   require httpd::packages
+  require httpd::supervisor
 
   exec { 'mkdir -p /httpd-2.2.22/data':
     path => ['/bin']
@@ -15,11 +16,6 @@ class httpd {
   exec { '/bin/bash -c "a2enmod vhost_alias"': }
   exec { '/bin/bash -c "a2enmod rewrite"': }
   exec { '/bin/bash -c "a2enmod ssl"': }
-
-  file { '/etc/supervisor/conf.d/httpd.conf':
-    ensure => present,
-    source => 'puppet:///modules/httpd/etc/supervisor/conf.d/httpd.conf'
-  }
 
   file { '/etc/apache2/sites-enabled/000-default':
     ensure => absent
