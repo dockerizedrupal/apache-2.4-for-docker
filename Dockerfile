@@ -11,7 +11,7 @@ RUN /src/build.sh
 
 RUN rm -rf /tmp/*
 
-VOLUME ["/httpd-2.2.22/data"]
+VOLUME ["/httpd/data"]
 
 EXPOSE 80
 

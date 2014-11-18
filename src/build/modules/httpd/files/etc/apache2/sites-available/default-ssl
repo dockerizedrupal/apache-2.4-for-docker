@@ -1,8 +1,8 @@
 <IfModule mod_ssl.c>
   <VirtualHost *:443>
-    DocumentRoot /httpd-2.2.22/data
+    DocumentRoot /httpd/data
 
-    <Directory "/httpd-2.2.22/data">
+    <Directory "/httpd/data">
       Options Indexes FollowSymLinks MultiViews
       AllowOverride All
       Order allow,deny

@@ -2,13 +2,13 @@ class httpd {
   require httpd::packages
   require httpd::supervisor
 
-  exec { 'mkdir -p /httpd-2.2.22/data':
+  exec { 'mkdir -p /httpd/data':
     path => ['/bin']
   }
 
-  exec { 'usermod -d /httpd-2.2.22/data www-data':
+  exec { 'usermod -d /httpd/data www-data':
     path => ['/usr/sbin'],
-    require => Exec['mkdir -p /httpd-2.2.22/data']
+    require => Exec['mkdir -p /httpd/data']
   }
 
   exec { '/bin/bash -c "a2enmod actions"': }

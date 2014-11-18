@@ -1,8 +1,8 @@
 <IfModule mod_fastcgi.c>
   AddHandler php .php
 
-  Alias /php52 /httpd-2.2.22/php52
-  FastCgiExternalServer /httpd-2.2.22/php52 -host <%= @php52_port_9000_tcp %> -idle-timeout 300 -pass-header Authorization
+  Alias /php52 /httpd/php52
+  FastCgiExternalServer /httpd/php52 -host <%= @php52_port_9000_tcp %> -idle-timeout 300 -pass-header Authorization
 
   <Location /php52>
     Order deny,allow
