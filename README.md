@@ -2,7 +2,7 @@
 
 A [Docker](https://docker.com/) container for [Apache HTTP Server](http://httpd.apache.org/).
 
-## Apache HTTP Server (STABLE BRANCH)
+## Apache HTTP Server (DEVELOPMENT BRANCH)
 
 ### Run the container
 
@@ -12,8 +12,8 @@ Using the `docker` command:
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -v $(pwd):/httpd/data \
-      simpledrupalcloud/data:latest
-  
+      simpledrupalcloud/data:dev
+
     CONTAINER="httpd" && sudo docker run \
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
@@ -21,13 +21,14 @@ Using the `docker` command:
       -p 443:443 \
       --volumes-from httpddata \
       -d \
-      simpledrupalcloud/httpd:latest
-      
+      simpledrupalcloud/httpd:dev
+
 Using the `fig` command
 
     TMP="$(mktemp -d)" \
       && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-httpd.git "${TMP}" \
       && cd "${TMP}" \
+      && git checkout dev \
       && fig up
 
 ### Build the image
@@ -35,7 +36,8 @@ Using the `fig` command
     TMP="$(mktemp -d)" \
       && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-httpd.git "${TMP}" \
       && cd "${TMP}" \
-      && sudo docker build -t simpledrupalcloud/httpd:latest . \
+      && git checkout dev \
+      && sudo docker build -t simpledrupalcloud/httpd:dev . \
       && cd -
 
 ## License
