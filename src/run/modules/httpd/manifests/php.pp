@@ -1,4 +1,12 @@
 class httpd::php {
+  if $php_host {
+    file { '/etc/apache2/conf.d/php':
+      ensure => present,
+      content => template('httpd/php.erb'),
+      mode => 644
+    }
+  }
+
   if $php52_port_9000_tcp {
     file { '/etc/apache2/conf.d/php52':
       ensure => present,

@@ -74,6 +74,10 @@ fi
 
 export FACTER_PHP56_PORT_9000_TCP="$(echo "${PHP56_PORT_9000_TCP}" | sed 's/tcp:\/\///')"
 
+# PHP
+
+export FACTER_PHP_HOST="$(echo "${PHP_PORT}" | sed 's/tcp:\/\///')"
+
 puppet apply --modulepath=/src/run/modules /src/run/run.pp
 
 /usr/bin/supervisord
