@@ -1,0 +1,10 @@
+<VirtualHost *:80>
+  DocumentRoot /httpd-2.2.22/data
+
+  <Directory "/httpd-2.2.22/data">
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+  </Directory>
+</VirtualHost>
