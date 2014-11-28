@@ -29,7 +29,7 @@ Using the `fig` command
       && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-httpd.git "${TMP}" \
       && cd "${TMP}" \
       && git checkout dev \
-      && fig up
+      && sudo fig up
 
 ### Build the image
 
