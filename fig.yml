@@ -1,5 +1,5 @@
 httpd:
-  image: simpledrupalcloud/httpd:dev
+  image: simpledrupalcloud/httpd:latest
   hostname: httpd
   ports:
     - "80:80"
@@ -7,7 +7,7 @@ httpd:
   volumes_from:
     - httpddata
 httpddata:
-  image: simpledrupalcloud/data:dev
+  image: simpledrupalcloud/data:latest
   hostname: httpddata
   volumes:
     - .:/httpd/data
