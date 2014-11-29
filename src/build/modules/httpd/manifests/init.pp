@@ -44,4 +44,10 @@ class httpd {
     target => '/etc/apache2/sites-available/default-ssl',
     require => File['/etc/apache2/sites-available/default-ssl']
   }
+
+  file { '/etc/apache2/apache2.conf':
+    ensure => present,
+    source => 'puppet:///modules/httpd/etc/apache2/apache2.conf',
+    mode => 644
+  }
 }
