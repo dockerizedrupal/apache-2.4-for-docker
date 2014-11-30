@@ -40,7 +40,7 @@ Using the `fig` command
 
 ## Logging
 
-The error and access logs are logged to standard output, meaning that by executing `docker logs httpd` command, it will display the logs directly on your screen.
+The Apache HTTP server error and access logs are logged to standard output, meaning that by executing `docker logs httpd` command, it will display the logs directly on your screen.
 
 ## License
 
