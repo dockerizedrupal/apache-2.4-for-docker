@@ -40,6 +40,10 @@ Using the `fig` command
       && sudo docker build -t simpledrupalcloud/httpd:dev . \
       && cd -
 
+## Logging
+
+The error and access logs are logged to standard output, meaning that by executing `docker logs httpd`, it will display these logs directly on your screen.
+
 ## License
 
 **MIT**
