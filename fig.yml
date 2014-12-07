@@ -10,4 +10,4 @@ httpddata:
   image: simpledrupalcloud/data:dev
   hostname: httpddata
   volumes:
-    - .:/httpd/data
+    - /httpd/data
