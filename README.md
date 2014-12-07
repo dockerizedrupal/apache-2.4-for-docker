@@ -44,6 +44,22 @@ Using the `fig` command
 
 The Apache HTTP server error and access logs are logged to standard output, meaning that by executing `docker logs httpd` command, it will display the logs directly on your screen.
 
+## Back up Apache HTTP Server data
+
+    sudo docker run \
+      --rm \
+      --volumes-from httpddata \
+      -v $(pwd):/backup \
+      busybox:latest tar czvf /backup/httpddata.tar.gz /httpd/data
+
+## Restore Apache HTTP Server data from a backup
+
+    sudo docker run \
+      --rm \
+      --volumes-from httpddata \
+      -v $(pwd):/backup \
+      busybox:latest tar xzvf /backup/httpddata.tar.gz
+
 ## License
 
 **MIT**
