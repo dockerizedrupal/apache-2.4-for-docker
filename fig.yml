@@ -10,4 +10,4 @@ httpddata:
   image: simpledrupalcloud/data:latest
   hostname: httpddata
   volumes:
-    - .:/httpd/data
+    - /httpd/data

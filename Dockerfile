@@ -14,5 +14,6 @@ RUN rm -rf /tmp/*
 VOLUME ["/httpd/data"]
 
 EXPOSE 80
+EXPOSE 443
 
 ENTRYPOINT ["/src/run.sh"]
