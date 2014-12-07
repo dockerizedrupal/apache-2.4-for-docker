@@ -10,7 +10,7 @@
     </Directory>
 
     SSLEngine on
-    SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
-    SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+    SSLCertificateFile /etc/ssl/certs/httpd.crt
+    SSLCertificateKeyFile /etc/ssl/private/httpd.key
   </VirtualHost>
 </IfModule>
