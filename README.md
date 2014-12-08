@@ -2,9 +2,7 @@
 
 A [Docker](https://docker.com/) container for [Apache HTTP Server](http://httpd.apache.org/).
 
-## Apache HTTP Server (DEVELOPMENT BRANCH)
-
-### Run the container
+## Run the container
 
 Using the `docker` command:
 
@@ -31,7 +29,7 @@ Using the `fig` command
       && git checkout dev \
       && sudo fig up
 
-### Build the image
+## Build the image
 
     TMP="$(mktemp -d)" \
       && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-httpd.git "${TMP}" \
@@ -50,7 +48,7 @@ The Apache HTTP server error and access logs are logged to standard output, mean
       --rm \
       --volumes-from httpddata \
       -v $(pwd):/backup \
-      busybox:latest tar czvf /backup/httpddata.tar.gz /httpd/data
+      simpledrupalcloud/data:dev tar czvf /backup/httpddata.tar.gz /httpd/data
 
 ## Restore Apache HTTP Server data from a backup
 
@@ -58,7 +56,7 @@ The Apache HTTP server error and access logs are logged to standard output, mean
       --rm \
       --volumes-from httpddata \
       -v $(pwd):/backup \
-      busybox:latest tar xzvf /backup/httpddata.tar.gz
+      simpledrupalcloud/data:dev tar xzvf /backup/httpddata.tar.gz
 
 ## License
 
