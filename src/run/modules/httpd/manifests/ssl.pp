@@ -4,7 +4,7 @@ class httpd::ssl {
     path    => ['/usr/bin']
   }
 
-  $subj = "/C=US/ST=Denial/L=Springfield/O=Dis/CN=$server_name"
+  $subj = "/C=/ST=/L=/O=/CN=$server_name"
 
   exec { "openssl req -x509 -new -nodes -key /root/httpdCA.key -days 365 -subj $subj -out /root/httpdCA.crt":
     timeout => 0,
