@@ -6,6 +6,8 @@ httpd:
     - "443:443"
   volumes_from:
     - httpddata
+  environment:
+    - SERVER_NAME=localhost
 httpddata:
   image: simpledrupalcloud/data:dev
   hostname: httpddata
