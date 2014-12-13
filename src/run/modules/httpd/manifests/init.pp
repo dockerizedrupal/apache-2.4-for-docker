@@ -1,4 +1,4 @@
 class httpd {
-  include httpd::php
-  include httpd::ssl
+  require httpd::php
+  require httpd::ssl
 }
