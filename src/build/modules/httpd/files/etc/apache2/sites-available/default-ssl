@@ -10,7 +10,7 @@
     </Directory>
 
     SSLEngine on
-    SSLCertificateFile /etc/ssl/certs/httpd.crt
-    SSLCertificateKeyFile /etc/ssl/private/httpd.key
+    SSLCertificateFile /httpd/ssl/certs/httpd.crt
+    SSLCertificateKeyFile /httpd/ssl/private/httpd.key
   </VirtualHost>
 </IfModule>
