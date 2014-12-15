@@ -12,7 +12,8 @@ RUN /src/build.sh
 RUN /src/clean.sh
 
 VOLUME ["/httpd/data"]
-VOLUME ["/httpd/ssl"]
+VOLUME ["/httpd/ssl/certs"]
+VOLUME ["/httpd/ssl/private"]
 
 EXPOSE 80
 EXPOSE 443

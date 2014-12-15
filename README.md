@@ -10,6 +10,8 @@ Using the `docker` command:
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -v /httpd/data \
+      -v /httpd/ssl/certs \
+      -v /httpd/ssl/private \
       simpledrupalcloud/data:dev
 
     CONTAINER="httpd" && sudo docker run \

@@ -13,3 +13,5 @@ httpddata:
   hostname: httpddata
   volumes:
     - /httpd/data
+    - /httpd/ssl/certs
+    - /httpd/ssl/private
