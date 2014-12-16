@@ -2,9 +2,7 @@
 
 A [Docker](https://docker.com/) container for [Apache HTTP Server](http://httpd.apache.org/).
 
-## Apache HTTP Server (STABLE BRANCH)
-
-### Run the container
+## Run the container
 
 Using the `docker` command:
 
@@ -12,6 +10,8 @@ Using the `docker` command:
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -v /httpd/data \
+      -v /httpd/ssl/certs \
+      -v /httpd/ssl/private \
       simpledrupalcloud/data:latest
 
     CONTAINER="httpd" && sudo docker run \
@@ -20,6 +20,7 @@ Using the `docker` command:
       -p 80:80 \
       -p 443:443 \
       --volumes-from httpddata \
+      -e SERVER_NAME="localhost" \
       -d \
       simpledrupalcloud/httpd:latest
 
@@ -30,7 +31,7 @@ Using the `fig` command
       && cd "${TMP}" \
       && sudo fig up
 
-### Build the image
+## Build the image
 
     TMP="$(mktemp -d)" \
       && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-httpd.git "${TMP}" \
@@ -41,6 +42,22 @@ Using the `fig` command
 ## Logging
 
 The Apache HTTP server error and access logs are logged to standard output, meaning that by executing `docker logs httpd` command, it will display the logs directly on your screen.
+
+## Back up Apache HTTP Server data
+
+    sudo docker run \
+      --rm \
+      --volumes-from httpddata \
+      -v $(pwd):/backup \
+      simpledrupalcloud/data:latest tar czvf /backup/httpddata.tar.gz /httpd/data
+
+## Restore Apache HTTP Server data from a backup
+
+    sudo docker run \
+      --rm \
+      --volumes-from httpddata \
+      -v $(pwd):/backup \
+      simpledrupalcloud/data:latest tar xzvf /backup/httpddata.tar.gz
 
 ## License
 

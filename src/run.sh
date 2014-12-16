@@ -78,6 +78,12 @@ export FACTER_PHP56_PORT_9000_TCP="$(echo "${PHP56_PORT_9000_TCP}" | sed 's/tcp:
 
 export FACTER_PHP_HOST="$(echo "${PHP_PORT}" | sed 's/tcp:\/\///')"
 
+if [ -z "${SERVER_NAME}" ]; then
+  SERVER_NAME="localhost"
+fi
+
+export FACTER_SERVER_NAME="${SERVER_NAME}"
+
 puppet apply --modulepath=/src/run/modules /src/run/run.pp
 
 /usr/bin/supervisord
