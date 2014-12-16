@@ -2,13 +2,13 @@ class httpd {
   require httpd::packages
   require httpd::supervisor
 
-  exec { 'mkdir -p /nginx/{data,ssl/{certs,private}}':
+  exec { 'mkdir -p /httpd/{data,ssl/{certs,private}}':
     path => ['/bin']
   }
 
   exec { 'usermod -d /httpd/data www-data':
     path => ['/usr/sbin'],
-    require => Exec['mkdir -p /nginx/{data,ssl/{certs,private}}']
+    require => Exec['mkdir -p /httpd/{data,ssl/{certs,private}}']
   }
 
   exec { '/bin/bash -c "a2enmod actions"': }
