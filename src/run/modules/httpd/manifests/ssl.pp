@@ -18,7 +18,7 @@ class httpd::ssl {
 
   $subj = "/C=/ST=/L=/O=/CN=$server_name"
 
-  exec { "openssl req -new -key /httpd/ssl/private/httpd.key -subj $subj -out /httpd/ssl/certs/httpd.csr":
+  exec { "openssl req -sha256 -new -key /httpd/ssl/private/httpd.key -subj $subj -out /httpd/ssl/certs/httpd.csr":
     timeout => 0,
     path => ['/usr/bin'],
     require => Exec['openssl genrsa -out /httpd/ssl/private/httpd.key 4096']
