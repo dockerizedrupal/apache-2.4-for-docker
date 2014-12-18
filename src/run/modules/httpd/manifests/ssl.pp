@@ -27,6 +27,6 @@ class httpd::ssl {
   exec { "openssl x509 -req -in /httpd/ssl/certs/httpd.csr -CA /httpd/ssl/certs/httpdCA.crt -CAkey /httpd/ssl/private/httpdCA.key -CAcreateserial -out /httpd/ssl/certs/httpd.crt -days 365":
     timeout => 0,
     path => ['/usr/bin'],
-    require => Exec["openssl req -new -key /httpd/ssl/private/httpd.key -subj $subj -out /httpd/ssl/certs/httpd.csr"]
+    require => Exec["openssl req -sha256 -new -key /httpd/ssl/private/httpd.key -subj $subj -out /httpd/ssl/certs/httpd.csr"]
   }
 }
