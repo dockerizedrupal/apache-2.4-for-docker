@@ -1,4 +1,7 @@
 class httpd {
   require httpd::php
-  require httpd::ssl
+
+  if ! file_exists('/httpd/ssl/certs/vhost.crt') {
+    require httpd::ssl
+  }
 }
