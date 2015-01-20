@@ -49,7 +49,7 @@ The Apache HTTP server error and access logs are logged to standard output, mean
       --rm \
       --volumes-from httpddata \
       -v $(pwd):/backup \
-      simpledrupalcloud/data:latest tar czvf /backup/httpddata.tar.gz /httpd/data /httpd/ssl/certs /httpd/ssl/private
+      simpledrupalcloud/base:latest tar czvf /backup/httpddata.tar.gz /httpd/data /httpd/ssl/certs /httpd/ssl/private
 
 ## Restore Apache HTTP Server data from a backup
 
@@ -57,7 +57,7 @@ The Apache HTTP server error and access logs are logged to standard output, mean
       --rm \
       --volumes-from httpddata \
       -v $(pwd):/backup \
-      simpledrupalcloud/data:latest tar xzvf /backup/httpddata.tar.gz
+      simpledrupalcloud/base:latest tar xzvf /backup/httpddata.tar.gz
 
 ## License
 
