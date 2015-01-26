@@ -9,9 +9,7 @@ Using the `docker` command:
     CONTAINER="httpddata" && sudo docker run \
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
-      -v /httpd/data \
-      -v /httpd/ssl/certs \
-      -v /httpd/ssl/private \
+      -v /httpd \
       simpledrupalcloud/data:dev
 
     CONTAINER="httpd" && sudo docker run \
@@ -51,7 +49,7 @@ The Apache HTTP server error and access logs are logged to standard output, mean
       --rm \
       --volumes-from httpddata \
       -v $(pwd):/backup \
-      simpledrupalcloud/base:dev tar czvf /backup/httpddata.tar.gz /httpd/data /httpd/ssl/certs /httpd/ssl/private
+      simpledrupalcloud/base:dev tar czvf /backup/httpddata.tar.gz /httpd
 
 ## Restore Apache HTTP Server data from a backup
 
