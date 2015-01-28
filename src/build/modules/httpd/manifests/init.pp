@@ -12,6 +12,10 @@ class httpd {
   exec { '/bin/bash -c "a2enmod rewrite"': }
   exec { '/bin/bash -c "a2enmod ssl"': }
 
+  file { '/var/www/index.html':
+    ensure => absent
+  }
+
   file { '/etc/apache2/sites-enabled/000-default':
     ensure => absent
   }
