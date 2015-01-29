@@ -9,7 +9,7 @@
       Allow from all
     </Directory>
 
-    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    Header add Strict-Transport-Security "max-age=31536000; includeSubDomains"
 
     SSLEngine on
     SSLProtocol ALL -SSLv2 -SSLv3
