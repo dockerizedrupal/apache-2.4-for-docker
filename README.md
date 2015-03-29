@@ -10,7 +10,7 @@ Using the `docker` command:
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -v /httpd \
-      simpledrupalcloud/data:dev
+      viljaste/data:dev
 
     CONTAINER="httpd" && sudo docker run \
       --name "${CONTAINER}" \
@@ -20,7 +20,7 @@ Using the `docker` command:
       --volumes-from httpddata \
       -e SERVER_NAME="localhost" \
       -d \
-      simpledrupalcloud/httpd:dev
+      viljaste/httpd:dev
 
 Using the `fig` command
 
@@ -36,7 +36,7 @@ Using the `fig` command
       && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-httpd.git "${TMP}" \
       && cd "${TMP}" \
       && git checkout dev \
-      && sudo docker build -t simpledrupalcloud/httpd:dev . \
+      && sudo docker build -t viljaste/httpd:dev . \
       && cd -
 
 ## Logging
@@ -49,7 +49,7 @@ The Apache HTTP server error and access logs are logged to standard output, mean
       --rm \
       --volumes-from httpddata \
       -v $(pwd):/backup \
-      simpledrupalcloud/base:dev tar czvf /backup/httpddata.tar.gz /httpd
+      viljaste/base:dev tar czvf /backup/httpddata.tar.gz /httpd
 
 ## Restore Apache HTTP Server data from a backup
 
@@ -57,7 +57,7 @@ The Apache HTTP server error and access logs are logged to standard output, mean
       --rm \
       --volumes-from httpddata \
       -v $(pwd):/backup \
-      simpledrupalcloud/base:dev tar xzvf /backup/httpddata.tar.gz
+      viljaste/base:dev tar xzvf /backup/httpddata.tar.gz
 
 ## License
 
