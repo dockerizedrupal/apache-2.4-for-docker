@@ -1,5 +1,5 @@
 httpd:
-  image: simpledrupalcloud/httpd:latest
+  image: viljaste/httpd:latest
   hostname: httpd
   ports:
     - "80:80"
@@ -9,7 +9,7 @@ httpd:
   environment:
     - SERVER_NAME=localhost
 httpddata:
-  image: simpledrupalcloud/data:latest
+  image: viljaste/data:latest
   hostname: httpddata
   volumes:
     - /httpd
