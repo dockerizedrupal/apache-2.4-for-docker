@@ -1,3 +1,3 @@
 class httpd::kerberos {
-  require httpd::packages
+  require httpd::kerberos::packages
 }
