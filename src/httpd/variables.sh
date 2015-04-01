@@ -87,7 +87,7 @@ export FACTER_SERVER_NAME="${SERVER_NAME}"
 export FACTER_KERBEROS_DEFAULT_REALM="${KERBEROS_DEFAULT_REALM}"
 
 for VARIABLE in $(env); do
-  if [[ "${VARIABLE}" == KERBEROS_*_REALM=* ]]; then
+  if [[ "${VARIABLE}" =~ ^KERBEROS_\d_REALM=.*$ ]]; then
     i="$(echo ${VARIABLE} | awk -F '_' '{ print $2 }')"
 
     KERBEROS_REALM="KERBEROS_${i}_REALM"
