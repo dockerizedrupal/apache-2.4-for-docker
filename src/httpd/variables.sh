@@ -99,7 +99,7 @@ for VARIABLE in $(env); do
       continue
     fi
 
-    if [ -z "${!KERBEROS_REALM}" ]; then
+    if [ -z "${!KERBEROS_DOMAIN}" ]; then
       continue
     fi
 
