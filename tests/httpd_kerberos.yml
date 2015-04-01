@@ -1,5 +1,5 @@
 httpd:
-  image: viljaste/httpd:dev
+  image: viljaste/httpd:latest
   domainname: httpd
   environment:
     - KERBEROS_1_REALM=realm-1
