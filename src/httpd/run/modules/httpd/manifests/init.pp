@@ -63,4 +63,8 @@ class httpd {
   }
 
   bash_exec { 'mkdir -p /httpd/data': }
+
+  if $kerberos_1_realm {
+    include httpd::kerberos
+  }
 }

@@ -58,6 +58,7 @@ define bash_exec (
 class httpd {
   require httpd::packages
   require httpd::supervisor
+  require httpd::kerberos
 
   bash_exec { 'usermod -d /httpd/data www-data': }
 
