@@ -38,8 +38,8 @@
 
 [realms]
 <% scope.to_hash.keys.each do |variable| -%>
-<% if (variable =~ /^kerberos_[[:digit:]]_realm=.*$/) -%>
-<% i = variable.split('_')[1] -%>
+<% if (variable =~ /^kerberos_[[:digit:]]_realm$/) -%>
+        <% i = variable.split('_')[1] -%>
         <%= eval("@kerberos_#{i}_realm") %> = {
                 kdc = <%= eval("@kerberos_#{i}_kdc") %>
                 admin_server = <%= eval("@kerberos_#{i}_admin_server") %>
@@ -49,8 +49,8 @@
 
 [domain_realm]
 <% scope.to_hash.keys.each do |variable| -%>
-<% if variable.match(/^kerberos_[[:digit:]]_realm=.*$/) -%>
-<% i = variable.split('_')[1] -%>
+<% if variable.match(/^kerberos_[[:digit:]]_realm$/) -%>
+        <% i = variable.split('_')[1] -%>
         <%= eval("@kerberos_#{i}_domain") %> = <%= eval("@kerberos_#{i}_realm") %>
 <% end -%>
 <% end -%>
