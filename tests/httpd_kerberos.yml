@@ -1,16 +1,17 @@
 httpd:
   image: viljaste/httpd:dev
-  domainname: httpd
+  hostname: httpd
   environment:
+    - KERBEROS_DEFAULT_REALM=default-realm
     - KERBEROS_1_REALM=realm-1
     - KERBEROS_1_DOMAIN=domain-1
     - KERBEROS_1_KDC=kdc-1
-    - KERBEROS_1_ADMIN_SERVER=admin_server-1
+    - KERBEROS_1_ADMIN_SERVER=admin-server-1
     - KERBEROS_2_REALM=realm-2
     - KERBEROS_2_DOMAIN=domain-2
     - KERBEROS_2_KDC=kdc-2
-    - KERBEROS_2_ADMIN_SERVER=admin_server-2
+    - KERBEROS_2_ADMIN_SERVER=admin-server-2
     - KERBEROS_3_REALM=realm-3
     - KERBEROS_3_DOMAIN=domain-3
     - KERBEROS_3_KDC=kdc-3
-    - KERBEROS_3_ADMIN_SERVER=admin_server-3
+    - KERBEROS_3_ADMIN_SERVER=admin-server-3
