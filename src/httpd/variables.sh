@@ -91,23 +91,29 @@ for VARIABLE in $(env); do
     i="$(echo ${VARIABLE} | awk -F '_' '{ print $2 }')"
 
     KERBEROS_REALM="KERBEROS_${i}_REALM"
+    KERBEROS_DOMAIN="KERBEROS_${i}_DOMAIN"
+    KERBEROS_KDC="KERBEROS_${i}_KDC"
+    KERBEROS_ADMIN_SERVER="KERBEROS_${i}_ADMIN_SERVER"
 
     if [ -z "${!KERBEROS_REALM}" ]; then
       continue
     fi
 
+    if [ -z "${!KERBEROS_REALM}" ]; then
+      continue
+    fi
+
+    if [ -z "${!KERBEROS_KDC}" ]; then
+      continue
+    fi
+
+    if [ -z "${!KERBEROS_ADMIN_SERVER}" ]; then
+      continue
+    fi
+
     export "FACTER_${KERBEROS_REALM}=${!KERBEROS_REALM}"
-
-    KERBEROS_DOMAIN="KERBEROS_${i}_DOMAIN"
-
     export "FACTER_${KERBEROS_DOMAIN}=${!KERBEROS_DOMAIN}"
-
-    KERBEROS_KDC="KERBEROS_${i}_KDC"
-
     export "FACTER_${KERBEROS_KDC}=${!KERBEROS_KDC}"
-
-    KERBEROS_ADMIN_SERVER="KERBEROS_${i}_ADMIN_SERVER"
-
     export "FACTER_${KERBEROS_ADMIN_SERVER}=${!KERBEROS_ADMIN_SERVER}"
   fi
 done
