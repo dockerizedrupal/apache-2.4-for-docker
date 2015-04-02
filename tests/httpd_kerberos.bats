@@ -17,80 +17,80 @@ teardown() {
   fig -f "${FIG_FILE}" rm --force
 }
 
-@test "php: freetds: KERBEROS_DEFAULT_REALM" {
+@test "httpd: freetds: KERBEROS_DEFAULT_REALM" {
   run docker exec "$(container)" /bin/su - root -mc "cat /etc/krb5.conf | grep 'default-realm'"
 
-  [ "${status}" -ne 0 ]
+  [ "${status}" -eq 0 ]
 }
 
-@test "php: freetds: KERBEROS_1_REALM" {
+@test "httpd: freetds: KERBEROS_1_REALM" {
   run docker exec "$(container)" /bin/su - root -mc "cat /etc/krb5.conf | grep 'realm-1'"
 
-  [ "${status}" -ne 0 ]
+  [ "${status}" -eq 0 ]
 }
 
-@test "php: freetds: KERBEROS_1_DOMAIN" {
+@test "httpd: freetds: KERBEROS_1_DOMAIN" {
   run docker exec "$(container)" /bin/su - root -mc "cat /etc/krb5.conf | grep 'domain-1'"
 
-  [ "${status}" -ne 0 ]
+  [ "${status}" -eq 0 ]
 }
 
-@test "php: freetds: KERBEROS_1_KDC" {
+@test "httpd: freetds: KERBEROS_1_KDC" {
   run docker exec "$(container)" /bin/su - root -mc "cat /etc/krb5.conf | grep 'kdc-1'"
 
-  [ "${status}" -ne 0 ]
+  [ "${status}" -eq 0 ]
 }
 
-@test "php: freetds: KERBEROS_1_SERVER_ADMIN" {
-  run docker exec "$(container)" /bin/su - root -mc "cat /etc/krb5.conf | grep 'server-admin-1'"
+@test "httpd: freetds: KERBEROS_1_ADMIN_SERVER" {
+  run docker exec "$(container)" /bin/su - root -mc "cat /etc/krb5.conf | grep 'admin-server-1'"
 
-  [ "${status}" -ne 0 ]
+  [ "${status}" -eq 0 ]
 }
 
-@test "php: freetds: KERBEROS_2_REALM" {
+@test "httpd: freetds: KERBEROS_2_REALM" {
   run docker exec "$(container)" /bin/su - root -mc "cat /etc/krb5.conf | grep 'realm-2'"
 
-  [ "${status}" -ne 0 ]
+  [ "${status}" -eq 0 ]
 }
 
-@test "php: freetds: KERBEROS_2_DOMAIN" {
+@test "httpd: freetds: KERBEROS_2_DOMAIN" {
   run docker exec "$(container)" /bin/su - root -mc "cat /etc/krb5.conf | grep 'domain-2'"
 
-  [ "${status}" -ne 0 ]
+  [ "${status}" -eq 0 ]
 }
 
-@test "php: freetds: KERBEROS_2_KDC" {
+@test "httpd: freetds: KERBEROS_2_KDC" {
   run docker exec "$(container)" /bin/su - root -mc "cat /etc/krb5.conf | grep 'kdc-2'"
 
-  [ "${status}" -ne 0 ]
+  [ "${status}" -eq 0 ]
 }
 
-@test "php: freetds: KERBEROS_2_SERVER_ADMIN" {
-  run docker exec "$(container)" /bin/su - root -mc "cat /etc/krb5.conf | grep 'server-admin-2'"
+@test "httpd: freetds: KERBEROS_2_ADMIN_SERVER" {
+  run docker exec "$(container)" /bin/su - root -mc "cat /etc/krb5.conf | grep 'admin-server-2'"
 
-  [ "${status}" -ne 0 ]
+  [ "${status}" -eq 0 ]
 }
 
-@test "php: freetds: KERBEROS_3_REALM" {
+@test "httpd: freetds: KERBEROS_3_REALM" {
   run docker exec "$(container)" /bin/su - root -mc "cat /etc/krb5.conf | grep 'realm-3'"
 
-  [ "${status}" -ne 0 ]
+  [ "${status}" -eq 0 ]
 }
 
-@test "php: freetds: KERBEROS_3_DOMAIN" {
+@test "httpd: freetds: KERBEROS_3_DOMAIN" {
   run docker exec "$(container)" /bin/su - root -mc "cat /etc/krb5.conf | grep 'domain-3'"
 
-  [ "${status}" -ne 0 ]
+  [ "${status}" -eq 0 ]
 }
 
-@test "php: freetds: KERBEROS_3_KDC" {
+@test "httpd: freetds: KERBEROS_3_KDC" {
   run docker exec "$(container)" /bin/su - root -mc "cat /etc/krb5.conf | grep 'kdc-3'"
 
-  [ "${status}" -ne 0 ]
+  [ "${status}" -eq 0 ]
 }
 
-@test "php: freetds: KERBEROS_3_SERVER_ADMIN" {
-  run docker exec "$(container)" /bin/su - root -mc "cat /etc/krb5.conf | grep 'server-admin-3'"
+@test "httpd: freetds: KERBEROS_3_ADMIN_SERVER" {
+  run docker exec "$(container)" /bin/su - root -mc "cat /etc/krb5.conf | grep 'admin-server-3'"
 
-  [ "${status}" -ne 0 ]
+  [ "${status}" -eq 0 ]
 }
