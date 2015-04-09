@@ -1,5 +1,7 @@
 [libdefaults]
         default_realm = <%= @kerberos_default_realm %>
+        default_tkt_enctypes = rc4-hmac des-cbc-crc des-cbc-md5
+        default_tgs_enctypes = rc4-hmac des-cbc-crc des-cbc-md5
 
 # The following krb5.conf variables are only for MIT Kerberos.
         krb4_config = /etc/krb.conf
