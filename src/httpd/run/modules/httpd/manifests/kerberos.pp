@@ -9,7 +9,9 @@ class httpd::kerberos {
     file { '/etc/apache2/sites-enabled/kerberos':
       ensure => present,
       content => template('httpd/kerberos.erb'),
-      mode => 644
+      mode => 400,
+      owner => www-data,
+      group => www-data
     }
   }
 }
