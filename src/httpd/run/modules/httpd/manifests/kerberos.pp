@@ -11,7 +11,7 @@ class httpd::kerberos {
       content => template('httpd/kerberos.erb'),
       mode => 400,
       owner => www-data,
-      group => www-data,
+      group => www-data
     }
   }
 }
