@@ -4,4 +4,12 @@ class httpd::kerberos {
     content => template('httpd/krb5.conf.erb'),
     mode => 644
   }
+
+  if file_exists('/etc/apache2/kerberos.krb5keytab') {
+    file { '/etc/apache2/sites-enabled/kerberos':
+      ensure => present,
+      content => template('httpd/kerberos.erb'),
+      mode => 644
+    }
+  }
 }
