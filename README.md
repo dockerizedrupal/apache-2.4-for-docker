@@ -22,13 +22,13 @@ Using the `docker` command:
       -d \
       viljaste/httpd:dev
 
-Using the `fig` command
+Using the `docker-composer` command
 
     TMP="$(mktemp -d)" \
       && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-httpd.git "${TMP}" \
       && cd "${TMP}" \
       && git checkout dev \
-      && sudo fig up
+      && sudo docker-composer up
 
 ## Build the image
 
@@ -38,26 +38,6 @@ Using the `fig` command
       && git checkout dev \
       && sudo docker build -t viljaste/httpd:dev . \
       && cd -
-
-## Logging
-
-The Apache HTTP server error and access logs are logged to standard output, meaning that by executing `docker logs httpd` command, it will display the logs directly on your screen.
-
-## Back up Apache HTTP Server data
-
-    sudo docker run \
-      --rm \
-      --volumes-from httpddata \
-      -v $(pwd):/backup \
-      viljaste/base:dev tar czvf /backup/httpddata.tar.gz /httpd
-
-## Restore Apache HTTP Server data from a backup
-
-    sudo docker run \
-      --rm \
-      --volumes-from httpddata \
-      -v $(pwd):/backup \
-      viljaste/base:dev tar xzvf /backup/httpddata.tar.gz
 
 ## License
 
