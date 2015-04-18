@@ -22,12 +22,12 @@ Using the `docker` command:
       -d \
       viljaste/httpd:latest
 
-Using the `docker-composer` command
+Using the `docker-compose` command
 
     TMP="$(mktemp -d)" \
       && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-httpd.git "${TMP}" \
       && cd "${TMP}" \
-      && sudo docker-composer up
+      && sudo docker-compose up
 
 ## Build the image
 

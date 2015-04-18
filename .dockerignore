@@ -2,5 +2,5 @@
 .gitignore
 README.md
 LICENSE.md
-docker-composer.yml
+docker-compose.yml
 tests

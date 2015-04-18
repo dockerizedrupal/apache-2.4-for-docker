@@ -3,18 +3,18 @@
 DOCKER_COMPOSE_FILE="${BATS_TEST_DIRNAME}/httpd_kerberos.yml"
 
 container() {
-  echo "$(docker-composer -f ${DOCKER_COMPOSE_FILE} ps httpd | grep httpd | awk '{ print $1 }')"
+  echo "$(docker-compose -f ${DOCKER_COMPOSE_FILE} ps httpd | grep httpd | awk '{ print $1 }')"
 }
 
 setup() {
-  docker-composer -f "${DOCKER_COMPOSE_FILE}" up -d --allow-insecure-ssl
+  docker-compose -f "${DOCKER_COMPOSE_FILE}" up -d --allow-insecure-ssl
 
   sleep 10
 }
 
 teardown() {
-  docker-composer -f "${DOCKER_COMPOSE_FILE}" kill
-  docker-composer -f "${DOCKER_COMPOSE_FILE}" rm --force
+  docker-compose -f "${DOCKER_COMPOSE_FILE}" kill
+  docker-compose -f "${DOCKER_COMPOSE_FILE}" rm --force
 }
 
 @test "httpd: freetds: KERBEROS_DEFAULT_REALM" {
