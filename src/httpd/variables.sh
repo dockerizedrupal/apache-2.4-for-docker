@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-if [ -z "${SERVER_NAME}" ]; then
-  export SERVER_NAME="localhost"
-fi
-
 dnsLookup() {
   echo "$(host "${1}" | awk '/has address/ { print $4 }')"
 }
