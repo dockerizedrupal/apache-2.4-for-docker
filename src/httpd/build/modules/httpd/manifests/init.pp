@@ -6,7 +6,7 @@ class httpd {
   bash_exec { 'usermod -d /httpd/data www-data': }
 
   bash_exec { 'a2enmod actions': }
-  bash_exec { 'a2enmod proxy_http': }
+  bash_exec { 'a2enmod proxy_fcgi': }
   bash_exec { 'a2enmod vhost_alias': }
   bash_exec { 'a2enmod rewrite': }
   bash_exec { 'a2enmod ssl': }
