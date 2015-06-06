@@ -3,7 +3,7 @@ class httpd {
 
   file { '/etc/apache2/conf-available/server_name.conf':
     ensure => present,
-    content => template('httpd/krb5.conf.erb'),
+    content => template('server_name.conf.erb'),
     mode => 644
   }
 
