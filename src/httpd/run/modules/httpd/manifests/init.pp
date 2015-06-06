@@ -3,7 +3,7 @@ class httpd {
 
   file { '/etc/apache2/conf-available/server_name.conf':
     ensure => present,
-    content => template('server_name.conf.erb'),
+    content => template('httpd/server_name.conf.erb'),
     mode => 644
   }
 
