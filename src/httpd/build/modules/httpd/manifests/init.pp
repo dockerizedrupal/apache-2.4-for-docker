@@ -46,7 +46,7 @@ class httpd {
 
   file { '/etc/apache2/conf-available/httpd.conf':
     ensure => present,
-    source => 'puppet:///modules/httpd/etc/conf-available/httpd.conf',
+    source => 'puppet:///modules/httpd/etc/apache2/conf-available/httpd.conf',
     mode => 644
   }
 
