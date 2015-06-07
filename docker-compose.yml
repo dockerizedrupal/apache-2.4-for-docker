@@ -8,6 +8,7 @@ httpd:
     - httpddata
   environment:
     - SERVER_NAME=localhost
+    - TIMEOUT=300
 httpddata:
   image: viljaste/data:latest
   hostname: httpddata

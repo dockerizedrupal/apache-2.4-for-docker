@@ -44,15 +44,15 @@ class httpd {
     require => File['/etc/apache2/sites-available/default-ssl.conf']
   }
 
-  file { '/etc/apache2/conf-available/httpd.conf':
+  file { '/etc/apache2/conf-available/logs.conf':
     ensure => present,
-    source => 'puppet:///modules/httpd/etc/apache2/conf-available/httpd.conf',
+    source => 'puppet:///modules/httpd/etc/apache2/conf-available/logs.conf',
     mode => 644
   }
 
-  file { '/etc/apache2/conf-enabled/httpd.conf':
+  file { '/etc/apache2/conf-enabled/logs.conf':
     ensure => link,
-    target => '/etc/apache2/conf-available/httpd.conf',
-    require => File['/etc/apache2/conf-available/httpd.conf']
+    target => '/etc/apache2/conf-available/logs.conf',
+    require => File['/etc/apache2/conf-available/logs.conf']
   }
 }

@@ -1,25 +1,23 @@
 class httpd {
-  require httpd::php
-
-  file { '/etc/apache2/conf-available/server_name.conf':
-    ensure => present,
-    content => template('httpd/server_name.conf.erb'),
-    mode => 644
+  if $server_name {
+    include httpd::server_name
   }
 
-  file { '/etc/apache2/conf-enabled/server_name.conf':
-    ensure => link,
-    target => '/etc/apache2/conf-available/server_name.conf',
-    require => File['/etc/apache2/conf-available/server_name.conf']
+  if $php_host {
+    include httpd::php
   }
-
-  if ! file_exists('/httpd/ssl/certs/httpd.crt') {
-    require httpd::ssl
-  }
-
-  bash_exec { 'mkdir -p /httpd/data': }
 
   if $kerberos_1_realm {
     include httpd::kerberos
   }
+
+  if $timeout {
+    include httpd::timeout
+  }
+
+  if ! file_exists('/httpd/ssl/certs/httpd.crt') {
+    include httpd::ssl
+  }
+
+  bash_exec { 'mkdir -p /httpd/data': }
 }
