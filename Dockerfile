@@ -13,4 +13,4 @@ VOLUME ["/httpd"]
 EXPOSE 80
 EXPOSE 443
 
-CMD ["/src/entrypoint.sh", "run"]
+ENTRYPOINT ["/src/entrypoint.sh", "run"]
