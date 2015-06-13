@@ -20,30 +20,6 @@ class httpd {
     ensure => absent
   }
 
-  file { '/etc/apache2/sites-available/default.conf':
-    ensure => present,
-    source => 'puppet:///modules/httpd/etc/apache2/sites-available/default.conf',
-    mode => 644
-  }
-
-  file { '/etc/apache2/sites-enabled/default.conf':
-    ensure => link,
-    target => '/etc/apache2/sites-available/default.conf',
-    require => File['/etc/apache2/sites-available/default.conf']
-  }
-
-  file { '/etc/apache2/sites-available/default-ssl.conf':
-    ensure => present,
-    source => 'puppet:///modules/httpd/etc/apache2/sites-available/default-ssl.conf',
-    mode => 644
-  }
-
-  file { '/etc/apache2/sites-enabled/default-ssl.conf':
-    ensure => link,
-    target => '/etc/apache2/sites-available/default-ssl.conf',
-    require => File['/etc/apache2/sites-available/default-ssl.conf']
-  }
-
   file { '/etc/apache2/conf-available/logs.conf':
     ensure => present,
     source => 'puppet:///modules/httpd/etc/apache2/conf-available/logs.conf',

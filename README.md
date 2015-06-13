@@ -19,6 +19,8 @@ Using the `docker` command:
       -p 443:443 \
       --volumes-from httpddata \
       -e SERVER_NAME="localhost" \
+      -e TIMEOUT="300" \
+      -e PROTOCOLS="https,http" \
       -d \
       viljaste/httpd:latest
 

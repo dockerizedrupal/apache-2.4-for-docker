@@ -1,0 +1,5 @@
+<VirtualHost *:80>
+  ServerAlias *
+  RewriteEngine On
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}$1 [redirect=301]
+</VirtualHost>

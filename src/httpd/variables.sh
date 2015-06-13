@@ -14,6 +14,22 @@ fi
 
 export FACTER_TIMEOUT="${TIMEOUT}"
 
+if [ -z "${PROTOCOLS}" ]; then
+  PROTOCOLS="https,http"
+fi
+
+PROTOCOLS=$(echo "${PROTOCOLS}" | tr "," "\n")
+
+for PROTOCOL in ${PROTOCOLS}; do
+  if [ "${PROTOCOL}" == "http" ]; then
+    export FACTER_HTTP="1"
+  fi
+
+  if [ "${PROTOCOL}" == "https" ]; then
+    export FACTER_HTTPS="1"
+  fi
+done
+
 export FACTER_KERBEROS_DEFAULT_REALM="${KERBEROS_DEFAULT_REALM}"
 
 for VARIABLE in $(env); do

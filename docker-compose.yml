@@ -9,6 +9,7 @@ httpd:
   environment:
     - SERVER_NAME=localhost
     - TIMEOUT=300
+    - PROTOCOLS=https,http
 httpddata:
   image: viljaste/data:latest
   hostname: httpddata
