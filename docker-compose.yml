@@ -10,6 +10,7 @@ httpd:
     - SERVER_NAME=localhost
     - TIMEOUT=300
     - PROTOCOLS=https,http
+    - INDEXES=0
 httpddata:
   image: viljaste/data:latest
   hostname: httpddata

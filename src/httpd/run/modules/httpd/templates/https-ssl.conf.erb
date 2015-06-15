@@ -3,6 +3,11 @@
     DocumentRoot /httpd/data
 
     <Directory "/httpd/data">
+      <% if @indexes == "1" %>
+        Options +Indexes
+      <% else %>
+        Options -Indexes
+      <% end %>
       AllowOverride All
       Require all granted
     </Directory>

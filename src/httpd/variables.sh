@@ -30,6 +30,12 @@ for PROTOCOL in ${PROTOCOLS}; do
   fi
 done
 
+if [ -z "${INDEXES}" ]; then
+  INDEXES="0"
+fi
+
+export FACTER_INDEXES="${INDEXES}"
+
 export FACTER_KERBEROS_DEFAULT_REALM="${KERBEROS_DEFAULT_REALM}"
 
 for VARIABLE in $(env); do
