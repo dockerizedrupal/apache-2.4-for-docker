@@ -1,5 +1,5 @@
 httpd:
-  image: viljaste/httpd:2.4
+  image: viljaste/httpd:latest
   hostname: httpd
   ports:
     - "80:80"

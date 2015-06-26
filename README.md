@@ -25,14 +25,13 @@ Using the `docker` command:
       -e USER_ID="" \
       -e GROUP_ID="" \
       -d \
-      viljaste/httpd:2.4
+      viljaste/httpd:latest
 
 Using the `docker-compose` command
 
     TMP="$(mktemp -d)" \
       && GIT_SSL_NO_VERIFY=true git clone https://git.beyondcloud.io/viljaste/docker-httpd.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 2.4 \
       && sudo docker-compose up
 
 ## Build the image
@@ -40,8 +39,7 @@ Using the `docker-compose` command
     TMP="$(mktemp -d)" \
       && GIT_SSL_NO_VERIFY=true git clone https://git.beyondcloud.io/viljaste/docker-httpd.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 2.4 \
-      && sudo docker build -t viljaste/httpd:2.4 . \
+      && sudo docker build -t viljaste/httpd:latest . \
       && cd -
 
 ## License
