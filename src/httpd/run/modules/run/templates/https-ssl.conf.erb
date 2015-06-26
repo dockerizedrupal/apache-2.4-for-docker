@@ -3,7 +3,7 @@
     DocumentRoot /httpd/data
 
     <Directory "/httpd/data">
-      <% if @indexes == "1" %>
+      <% if @indexes == "On" %>
         Options +Indexes
       <% else %>
         Options -Indexes

@@ -31,7 +31,7 @@ for PROTOCOL in ${PROTOCOLS}; do
 done
 
 if [ -z "${INDEXES}" ]; then
-  INDEXES="0"
+  INDEXES="Off"
 fi
 
 export FACTER_INDEXES="${INDEXES}"

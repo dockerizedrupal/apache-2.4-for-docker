@@ -21,9 +21,9 @@ Using the `docker` command:
       -e SERVER_NAME="localhost" \
       -e TIMEOUT="300" \
       -e PROTOCOLS="https,http" \
-      -e INDEXES="0" \
-      -e USER_ID="0" \
-      -e GROUP_ID="0" \
+      -e INDEXES="Off" \
+      -e USER_ID="" \
+      -e GROUP_ID="" \
       -d \
       viljaste/httpd:latest
 

@@ -10,9 +10,9 @@ httpd:
     - SERVER_NAME=localhost
     - TIMEOUT=300
     - PROTOCOLS=https,http
-    - INDEXES=0
-    - USER_ID=0
-    - GROUP_ID=0
+    - INDEXES=Off
+    - USER_ID=
+    - GROUP_ID=
 httpddata:
   image: viljaste/data:latest
   hostname: httpddata
