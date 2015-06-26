@@ -1,4 +1,4 @@
-FROM viljaste/base:latest
+FROM viljaste/base:debian-jessie
 
 MAINTAINER Jürgen Viljaste <j.viljaste@gmail.com>
 

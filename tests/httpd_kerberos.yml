@@ -1,5 +1,5 @@
 httpd:
-  image: viljaste/httpd:latest
+  image: viljaste/httpd:2.4
   hostname: httpd
   environment:
     - KERBEROS_DEFAULT_REALM=default-realm
