@@ -1,7 +1,7 @@
-class httpd::php {
+class run::httpd::conf_available::php {
   file { '/etc/apache2/conf-available/php.conf':
     ensure => present,
-    content => template('httpd/php.conf.erb'),
+    content => template('run/php.conf.erb'),
     mode => 644
   }
 

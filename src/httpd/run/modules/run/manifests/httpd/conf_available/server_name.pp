@@ -1,7 +1,7 @@
-class httpd::server_name {
+class run::httpd::conf_available::server_name {
   file { '/etc/apache2/conf-available/server_name.conf':
     ensure => present,
-    content => template('httpd/server_name.conf.erb'),
+    content => template('run/server_name.conf.erb'),
     mode => 644
   }
 

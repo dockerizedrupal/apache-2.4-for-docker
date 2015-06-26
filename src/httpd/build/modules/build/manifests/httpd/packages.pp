@@ -1,4 +1,4 @@
-class httpd::packages {
+class build::httpd::packages {
   package {[
       'apache2'
     ]:

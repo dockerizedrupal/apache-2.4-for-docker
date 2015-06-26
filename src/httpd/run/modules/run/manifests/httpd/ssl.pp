@@ -1,4 +1,4 @@
-class httpd::ssl {
+class run::httpd::ssl {
   bash_exec { 'mkdir -p /httpd/ssl': }
 
   bash_exec { 'mkdir -p /httpd/ssl/private':
@@ -11,7 +11,7 @@ class httpd::ssl {
 
   file { '/root/opensslCA.cnf':
     ensure => present,
-    content => template('httpd/opensslCA.cnf.erb'),
+    content => template('run/opensslCA.cnf.erb'),
     require => Bash_exec['mkdir -p /httpd/ssl/certs']
   }
 
@@ -32,7 +32,7 @@ class httpd::ssl {
 
   file { '/root/openssl.cnf':
     ensure => present,
-    content => template('httpd/openssl.cnf.erb'),
+    content => template('run/openssl.cnf.erb'),
     require => Bash_exec['openssl genrsa -out /httpd/ssl/private/httpd.key 4096']
   }
 

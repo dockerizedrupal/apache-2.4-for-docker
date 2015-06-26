@@ -1,7 +1,7 @@
-class httpd::timeout {
+class run::httpd::conf_available::timeout {
   file { '/etc/apache2/conf-available/timeout.conf':
     ensure => present,
-    content => template('httpd/timeout.conf.erb'),
+    content => template('run/timeout.conf.erb'),
     mode => 644
   }
 

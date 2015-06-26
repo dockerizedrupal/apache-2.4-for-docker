@@ -1,7 +1,6 @@
-class httpd {
-  require httpd::packages
-  require httpd::supervisor
-  require httpd::kerberos
+class build::httpd {
+  require build::httpd::packages
+  require build::httpd::supervisor
 
   bash_exec { 'usermod -d /httpd/data www-data': }
 
@@ -22,7 +21,7 @@ class httpd {
 
   file { '/etc/apache2/conf-available/logs.conf':
     ensure => present,
-    source => 'puppet:///modules/httpd/etc/apache2/conf-available/logs.conf',
+    source => 'puppet:///modules/build/etc/apache2/conf-available/logs.conf',
     mode => 644
   }
 

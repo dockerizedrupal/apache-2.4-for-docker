@@ -36,6 +36,18 @@ fi
 
 export FACTER_INDEXES="${INDEXES}"
 
+if [ -z "${USER_ID}" ]; then
+  USER_ID="0"
+fi
+
+export FACTER_USER_ID="${USER_ID}"
+
+if [ -z "${GROUP_ID}" ]; then
+  GROUP_ID="0"
+fi
+
+export FACTER_GROUP_ID="${GROUP_ID}"
+
 export FACTER_KERBEROS_DEFAULT_REALM="${KERBEROS_DEFAULT_REALM}"
 
 for VARIABLE in $(env); do

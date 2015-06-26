@@ -1,23 +1,19 @@
-class httpd {
+class run::httpd {
   if $php_host {
-    include httpd::php
+    include run::httpd::conf_available::php
   }
 
-  if $kerberos_1_realm {
-    include httpd::kerberos
-  }
-
-  include httpd::server_name
-  include httpd::timeout
+  include run::httpd::conf_available::server_name
+  include run::httpd::conf_available::timeout
 
   if $http and $https {
     if ! file_exists('/httpd/ssl/certs/httpd.crt') {
-      require httpd::ssl
+      require run::httpd::ssl
     }
 
     file { '/etc/apache2/sites-available/http_https.conf':
       ensure => present,
-      content => template('httpd/http_https.conf.erb'),
+      content => template('run/http_https.conf.erb'),
       mode => 644
     }
 
@@ -29,7 +25,7 @@ class httpd {
 
     file { '/etc/apache2/sites-available/http_https-ssl.conf':
       ensure => present,
-      content => template('httpd/http_https-ssl.conf.erb'),
+      content => template('run/http_https-ssl.conf.erb'),
       mode => 644
     }
 
@@ -42,7 +38,7 @@ class httpd {
   elsif $http {
     file { '/etc/apache2/sites-available/http.conf':
       ensure => present,
-      content => template('httpd/http.conf.erb'),
+      content => template('run/http.conf.erb'),
       mode => 644
     }
 
@@ -54,12 +50,12 @@ class httpd {
   }
   elsif $https {
     if ! file_exists('/httpd/ssl/certs/httpd.crt') {
-      require httpd::ssl
+      require run::httpd::ssl
     }
 
     file { '/etc/apache2/sites-available/https.conf':
       ensure => present,
-      content => template('httpd/https.conf.erb'),
+      content => template('run/https.conf.erb'),
       mode => 644
     }
 
@@ -71,7 +67,7 @@ class httpd {
 
     file { '/etc/apache2/sites-available/https-ssl.conf':
       ensure => present,
-      content => template('httpd/https-ssl.conf.erb'),
+      content => template('run/https-ssl.conf.erb'),
       mode => 644
     }
 
