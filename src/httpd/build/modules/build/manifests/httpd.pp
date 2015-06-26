@@ -19,6 +19,12 @@ class build::httpd {
     ensure => absent
   }
 
+  file { '/etc/apache2/envvars':
+    ensure => present,
+    source => 'puppet:///modules/build/etc/apache2/envvars',
+    mode => 755
+  }
+
   file { '/etc/apache2/conf-available/logs.conf':
     ensure => present,
     source => 'puppet:///modules/build/etc/apache2/conf-available/logs.conf',

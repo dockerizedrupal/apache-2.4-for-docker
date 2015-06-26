@@ -37,13 +37,13 @@ fi
 export FACTER_INDEXES="${INDEXES}"
 
 if [ -z "${USER_ID}" ]; then
-  USER_ID="0"
+  USER_ID=$(id www-data -u)
 fi
 
 export FACTER_USER_ID="${USER_ID}"
 
 if [ -z "${GROUP_ID}" ]; then
-  GROUP_ID="0"
+  GROUP_ID=$(id www-data -g)
 fi
 
 export FACTER_GROUP_ID="${GROUP_ID}"

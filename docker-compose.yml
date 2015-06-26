@@ -11,6 +11,8 @@ httpd:
     - TIMEOUT=300
     - PROTOCOLS=https,http
     - INDEXES=0
+    - USER_ID=0
+    - GROUP_ID=0
 httpddata:
   image: viljaste/data:latest
   hostname: httpddata

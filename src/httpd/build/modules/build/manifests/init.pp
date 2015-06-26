@@ -1,4 +1,6 @@
 class build {
-  require build::httpd
-  require build::kerberos
+  require build::user
+
+  include build::httpd
+  include build::kerberos
 }
