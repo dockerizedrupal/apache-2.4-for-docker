@@ -1,6 +1,6 @@
 # docker-httpd
 
-A [Docker](https://docker.com/) container for [Apache HTTP Server](http://httpd.apache.org/).
+A [Docker](https://docker.com/) image for [Apache HTTP Server](http://httpd.apache.org/).
 
 ## Run the container
 
