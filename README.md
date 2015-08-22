@@ -10,7 +10,7 @@ Using the `docker` command:
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -v /httpd \
-      viljaste/data:latest
+      dockerizedrupal/data:latest
 
     CONTAINER="httpd" && sudo docker run \
       --name "${CONTAINER}" \
@@ -25,12 +25,12 @@ Using the `docker` command:
       -e USER_ID="" \
       -e GROUP_ID="" \
       -d \
-      viljaste/httpd:2.4
+      dockerizedrupal/httpd:2.4
 
 Using the `docker-compose` command
 
     TMP="$(mktemp -d)" \
-      && GIT_SSL_NO_VERIFY=true git clone https://git.beyondcloud.io/viljaste/docker-httpd.git "${TMP}" \
+      && git clone https://github.com/dockerizedrupal/docker-httpd.git "${TMP}" \
       && cd "${TMP}" \
       && git checkout 2.4 \
       && sudo docker-compose up
@@ -38,10 +38,10 @@ Using the `docker-compose` command
 ## Build the image
 
     TMP="$(mktemp -d)" \
-      && GIT_SSL_NO_VERIFY=true git clone https://git.beyondcloud.io/viljaste/docker-httpd.git "${TMP}" \
+      && git clone https://github.com/dockerizedrupal/docker-httpd.git "${TMP}" \
       && cd "${TMP}" \
       && git checkout 2.4 \
-      && sudo docker build -t viljaste/httpd:2.4 . \
+      && sudo docker build -t dockerizedrupal/httpd:2.4 . \
       && cd -
 
 ## License

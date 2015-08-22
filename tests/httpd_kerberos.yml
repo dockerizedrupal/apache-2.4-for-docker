@@ -1,5 +1,5 @@
 httpd:
-  image: viljaste/httpd:2.4
+  image: dockerizedrupal/httpd:2.4
   hostname: httpd
   environment:
     - KERBEROS_DEFAULT_REALM=default-realm

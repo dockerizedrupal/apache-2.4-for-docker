@@ -1,5 +1,5 @@
 httpd:
-  image: viljaste/httpd:2.4
+  image: dockerizedrupal/httpd:2.4
   hostname: httpd
   ports:
     - "80:80"
@@ -14,7 +14,7 @@ httpd:
     - USER_ID=
     - GROUP_ID=
 httpddata:
-  image: viljaste/data:latest
+  image: dockerizedrupal/data:latest
   hostname: httpddata
   volumes:
     - /httpd
