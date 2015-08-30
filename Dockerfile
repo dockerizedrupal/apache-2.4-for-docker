@@ -8,7 +8,7 @@ ADD ./src /src
 
 RUN /src/entrypoint.sh build
 
-VOLUME ["/httpd"]
+VOLUME ["/apache-2.4"]
 
 EXPOSE 80
 EXPOSE 443
