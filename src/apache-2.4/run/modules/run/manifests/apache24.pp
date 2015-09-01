@@ -1,4 +1,6 @@
 class run::apache24 {
+  require run::user
+
   if $php_host {
     include run::apache24::conf_available::php
   }
