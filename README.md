@@ -25,13 +25,14 @@ Using the `docker` command:
       -e USER_ID="" \
       -e GROUP_ID="" \
       -d \
-      dockerizedrupal/apache-2.4:1.0.3
+      dockerizedrupal/apache-2.4:1.0.4
 
 Using the `docker-compose` command
 
     TMP="$(mktemp -d)" \
       && git clone https://github.com/dockerizedrupal/docker-apache-2.4.git "${TMP}" \
       && cd "${TMP}" \
+      $$ git checkout 1.0.4 \
       && sudo docker-compose up
 
 ## Build the image
@@ -39,8 +40,8 @@ Using the `docker-compose` command
     TMP="$(mktemp -d)" \
       && git clone https://github.com/dockerizedrupal/docker-apache-2.4.git "${TMP}" \
       && cd "${TMP}" \
-      $$ git checkout 1.0.3 \
-      && sudo docker build -t dockerizedrupal/apache-2.4:1.0.3 . \
+      $$ git checkout 1.0.4 \
+      && sudo docker build -t dockerizedrupal/apache-2.4:1.0.4 . \
       && cd -
 
 ## License
