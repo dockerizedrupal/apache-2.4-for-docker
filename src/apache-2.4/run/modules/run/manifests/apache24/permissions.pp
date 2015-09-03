@@ -4,5 +4,5 @@ class run::apache24::permissions {
 
   bash_exec { 'chown -R container.container /var/lib/apache2': }
 
-  bash_exec { 'chown -R container.container /apache-2.4': }
+  bash_exec { 'chown -R container.container /apache': }
 }

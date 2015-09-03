@@ -9,7 +9,7 @@ class run::apache24 {
   include run::apache24::conf_available::timeout
 
   if $http and $https {
-    if ! file_exists('/apache-2.4/ssl/certs/apache-2.4.crt') {
+    if ! file_exists('/apache/ssl/certs/apache-2.4.crt') {
       require run::apache24::ssl
     }
 
@@ -51,7 +51,7 @@ class run::apache24 {
     }
   }
   elsif $https {
-    if ! file_exists('/apache-2.4/ssl/certs/apache-2.4.crt') {
+    if ! file_exists('/apache/ssl/certs/apache-2.4.crt') {
       require run::apache24::ssl
     }
 
@@ -80,5 +80,5 @@ class run::apache24 {
     }
   }
 
-  bash_exec { 'mkdir -p /apache-2.4/data': }
+  bash_exec { 'mkdir -p /apache/data': }
 }

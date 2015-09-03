@@ -2,7 +2,7 @@ class build::apache24 {
   require build::apache24::packages
   require build::apache24::supervisor
 
-  bash_exec { 'usermod -d /apache-2.4/data www-data': }
+  bash_exec { 'usermod -d /apache/data www-data': }
 
   bash_exec { 'a2enmod actions': }
   bash_exec { 'a2enmod proxy_fcgi': }

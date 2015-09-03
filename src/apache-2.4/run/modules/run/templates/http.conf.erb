@@ -1,7 +1,7 @@
 <VirtualHost *:80>
-  DocumentRoot /apache-2.4/data
+  DocumentRoot /apache/data
 
-  <Directory "/apache-2.4/data">
+  <Directory "/apache/data">
     <% if @indexes == "On" %>
       Options +Indexes
     <% else %>
