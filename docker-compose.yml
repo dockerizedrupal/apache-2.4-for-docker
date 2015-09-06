@@ -1,5 +1,5 @@
 apache:
-  image: dockerizedrupal/apache-2.4:1.0.8
+  image: dockerizedrupal/apache-2.4:1.0.9
   hostname: apache
   ports:
     - "80:80"
@@ -14,7 +14,7 @@ apache:
     - USER_ID=
     - GROUP_ID=
 apache-data:
-  image: dockerizedrupal/data:1.0.2
+  image: dockerizedrupal/data:1.0.3
   hostname: apache-data
   volumes:
     - /apache/data
