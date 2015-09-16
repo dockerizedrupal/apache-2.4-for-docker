@@ -3,13 +3,20 @@
     DocumentRoot /apache/data
 
     <Directory "/apache/data">
-      <% if @indexes == "On" %>
-        Options +Indexes
-      <% else %>
-        Options -Indexes
-      <% end %>
+<% if @indexes == "On" -%>
+      Options +Indexes
+<% else -%>
+      Options -Indexes
+<% end -%>
       AllowOverride All
+<% if @http_basic_auth_password and !@http_basic_auth_password.empty? -%>
+      AuthType Basic
+      AuthName "Authentication Required"
+      AuthUserFile "/etc/htpasswd/.htpasswd"
+      Require valid-user
+<% else -%>
       Require all granted
+<% end -%>
     </Directory>
 
     Header add Strict-Transport-Security "max-age=31536000; includeSubDomains"

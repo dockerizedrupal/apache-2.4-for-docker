@@ -29,17 +29,19 @@ Using the `docker` command:
       -e KERBEROS_1_DOMAIN="" \
       -e KERBEROS_1_KDC="" \
       -e KERBEROS_1_ADMIN_SERVER="" \
+      -e HTTP_BASIC_AUTH_USERNAME="container" \
+      -e HTTP_BASIC_AUTH_PASSWORD="" \
       -e USER_ID="" \
       -e GROUP_ID="" \
       -d \
-      dockerizedrupal/apache-2.4:1.0.12
+      dockerizedrupal/apache-2.4:1.0.13
 
 Using the `docker-compose` command
 
     TMP="$(mktemp -d)" \
       && git clone https://github.com/dockerizedrupal/docker-apache-2.4.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 1.0.12 \
+      && git checkout 1.0.13 \
       && sudo docker-compose up
 
 ## Build the image
@@ -47,8 +49,8 @@ Using the `docker-compose` command
     TMP="$(mktemp -d)" \
       && git clone https://github.com/dockerizedrupal/docker-apache-2.4.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 1.0.12 \
-      && sudo docker build -t dockerizedrupal/apache-2.4:1.0.12 . \
+      && git checkout 1.0.13 \
+      && sudo docker build -t dockerizedrupal/apache-2.4:1.0.13 . \
       && cd -
 
 ## License

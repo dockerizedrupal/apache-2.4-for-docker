@@ -8,6 +8,10 @@ class run::apache24 {
   include run::apache24::conf_available::server_name
   include run::apache24::conf_available::timeout
 
+  if $http_basic_auth_password {
+    include run::apache24::http_basic_auth
+  }
+
   if $http and $https {
     if ! file_exists('/apache/ssl/certs/apache-2.4.crt') {
       require run::apache24::ssl

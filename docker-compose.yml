@@ -1,5 +1,5 @@
 apache:
-  image: dockerizedrupal/apache-2.4:1.0.12
+  image: dockerizedrupal/apache-2.4:1.0.13
   hostname: apache
   ports:
     - "80:80"
@@ -17,6 +17,8 @@ apache:
     - KERBEROS_1_DOMAIN=
     - KERBEROS_1_KDC=
     - KERBEROS_1_ADMIN_SERVER=
+    - HTTP_BASIC_AUTH_USERNAME=container
+    - HTTP_BASIC_AUTH_PASSWORD=
     - USER_ID=
     - GROUP_ID=
 apache-data:

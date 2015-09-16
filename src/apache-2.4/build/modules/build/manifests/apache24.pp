@@ -36,4 +36,6 @@ class build::apache24 {
     target => '/etc/apache2/conf-available/logs.conf',
     require => File['/etc/apache2/conf-available/logs.conf']
   }
+
+  bash_exec { 'mkdir -p /etc/htpasswd': }
 }
