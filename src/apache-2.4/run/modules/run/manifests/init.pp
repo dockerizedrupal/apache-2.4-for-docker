@@ -3,6 +3,7 @@ class run {
 
   include run::apache24
   include run::apache24::permissions
+  include run::timezone
 
   if $kerberos_1_realm {
     include run::kerberos

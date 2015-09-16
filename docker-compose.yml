@@ -1,5 +1,5 @@
 apache:
-  image: dockerizedrupal/apache-2.4:1.0.9
+  image: dockerizedrupal/apache-2.4:1.0.10
   hostname: apache
   ports:
     - "80:80"
@@ -8,6 +8,7 @@ apache:
     - apache-data
   environment:
     - SERVER_NAME=localhost
+    - TIMEZONE=Etc/UTC
     - TIMEOUT=300
     - PROTOCOLS=https,http
     - INDEXES=Off

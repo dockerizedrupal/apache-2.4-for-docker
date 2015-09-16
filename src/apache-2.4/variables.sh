@@ -8,6 +8,12 @@ fi
 
 export FACTER_SERVER_NAME="${SERVER_NAME}"
 
+if [ -z "${TIMEZONE}" ]; then
+  TIMEZONE="Etc/UTC"
+fi
+
+export FACTER_TIMEZONE="${TIMEZONE}"
+
 if [ -z "${TIMEOUT}" ]; then
   TIMEOUT="300"
 fi
