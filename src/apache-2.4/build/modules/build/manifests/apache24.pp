@@ -37,5 +37,17 @@ class build::apache24 {
     require => File['/etc/apache2/conf-available/logs.conf']
   }
 
+  file { '/etc/apache2/conf-available/security.conf':
+    ensure => present,
+    source => 'puppet:///modules/build/etc/apache2/conf-available/security.conf',
+    mode => 644
+  }
+
+  file { '/etc/apache2/conf-enabled/security.conf':
+    ensure => link,
+    target => '/etc/apache2/conf-available/security.conf',
+    require => File['/etc/apache2/conf-available/security.conf']
+  }
+
   bash_exec { 'mkdir -p /etc/htpasswd': }
 }
