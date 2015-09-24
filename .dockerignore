@@ -6,3 +6,5 @@ LICENSE.md
 docker-compose.yml
 tests
 VERSION.md
+Gruntfile.js
+package.json
