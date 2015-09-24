@@ -4,8 +4,6 @@ A [Docker](https://docker.com/) image for [Apache HTTP Server](http://httpd.apac
 
 ## Run the container
 
-Using the `docker` command:
-
     CONTAINER="apache-data" && sudo docker run \
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
@@ -34,24 +32,20 @@ Using the `docker` command:
       -e USER_ID="" \
       -e GROUP_ID="" \
       -d \
-      dockerizedrupal/apache-2.4:1.0.15
-
-Using the `docker-compose` command
-
-    TMP="$(mktemp -d)" \
-      && git clone https://github.com/dockerizedrupal/docker-apache-2.4.git "${TMP}" \
-      && cd "${TMP}" \
-      && git checkout 1.0.15 \
-      && sudo docker-compose up
+      dockerizedrupal/apache-2.4:1.0.16
 
 ## Build the image
 
     TMP="$(mktemp -d)" \
       && git clone https://github.com/dockerizedrupal/docker-apache-2.4.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 1.0.15 \
-      && sudo docker build -t dockerizedrupal/apache-2.4:1.0.15 . \
+      && git checkout 1.0.16 \
+      && sudo docker build -t dockerizedrupal/apache-2.4:1.0.16 . \
       && cd -
+
+## Changing the container behaviour on runtime through environment variables
+
+    // TODO
 
 ## License
 

@@ -1,0 +1,8 @@
+{
+  "name": "docker-apache-2.4",
+  "version": "1.0.16",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-replace": "^0.11.0"
+  }
+}
