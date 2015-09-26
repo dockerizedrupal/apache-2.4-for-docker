@@ -9,7 +9,7 @@
       Options -Indexes
 <% end -%>
       AllowOverride All
-<% if @http_basic_auth_password and !@http_basic_auth_password.empty? -%>
+<% if @http_basic_auth == "On" -%>
       AuthType Basic
       AuthName "Authentication Required"
       AuthUserFile "/etc/htpasswd/.htpasswd"

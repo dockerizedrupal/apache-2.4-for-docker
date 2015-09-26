@@ -88,6 +88,12 @@ for VARIABLE in $(env); do
   fi
 done
 
+if [ -z "${HTTP_BASIC_AUTH}" ]; then
+  HTTP_BASIC_AUTH="Off"
+fi
+
+export FACTER_HTTP_BASIC_AUTH="${HTTP_BASIC_AUTH}"
+
 if [ -z "${HTTP_BASIC_AUTH_USERNAME}" ]; then
   HTTP_BASIC_AUTH_USERNAME="container"
 fi

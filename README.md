@@ -1,6 +1,6 @@
 # docker-apache-2.4
 
-A [Docker](https://docker.com/) image for [Apache HTTP Server](http://httpd.apache.org/) version 2.4.
+A Docker image for [Apache HTTP Server](http://httpd.apache.org/) version 2.4 that is used in the [Dockerized Drupal](https://dockerizedrupal.com/) project.
 
 ## Run the container
 
@@ -9,7 +9,7 @@ A [Docker](https://docker.com/) image for [Apache HTTP Server](http://httpd.apac
       -h "${CONTAINER}" \
       -v /apache/data \
       -v /apache/ssl \
-      dockerizedrupal/data:1.0.3
+      dockerizedrupal/data:1.1.0
 
     CONTAINER="apache" && sudo docker run \
       --name "${CONTAINER}" \
@@ -27,25 +27,47 @@ A [Docker](https://docker.com/) image for [Apache HTTP Server](http://httpd.apac
       -e KERBEROS_1_DOMAIN="" \
       -e KERBEROS_1_KDC="" \
       -e KERBEROS_1_ADMIN_SERVER="" \
+      -e HTTP_BASIC_AUTH="Off" \
       -e HTTP_BASIC_AUTH_USERNAME="container" \
       -e HTTP_BASIC_AUTH_PASSWORD="" \
       -e USER_ID="" \
       -e GROUP_ID="" \
       -d \
-      dockerizedrupal/apache-2.4:1.0.17
+      dockerizedrupal/apache-2.4:1.1.0
 
 ## Build the image
 
     TMP="$(mktemp -d)" \
       && git clone https://github.com/dockerizedrupal/docker-apache-2.4.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 1.0.17 \
-      && sudo docker build -t dockerizedrupal/apache-2.4:1.0.17 . \
+      && git checkout 1.1.0 \
+      && sudo docker build -t dockerizedrupal/apache-2.4:1.1.0 . \
       && cd -
 
 ## Changing the container behaviour on runtime through environment variables
 
     // TODO
+
+## Tests
+
+Tests are implemented in [Bats: Bash Automated Testing System](https://github.com/sstephenson/bats).
+
+### Test results for the current release
+
+    1..13
+    ok 1 apache-2.4: freetds: KERBEROS_DEFAULT_REALM
+    ok 2 apache-2.4: freetds: KERBEROS_1_REALM
+    ok 3 apache-2.4: freetds: KERBEROS_1_DOMAIN
+    ok 4 apache-2.4: freetds: KERBEROS_1_KDC
+    ok 5 apache-2.4: freetds: KERBEROS_1_ADMIN_SERVER
+    ok 6 apache-2.4: freetds: KERBEROS_2_REALM
+    ok 7 apache-2.4: freetds: KERBEROS_2_DOMAIN
+    ok 8 apache-2.4: freetds: KERBEROS_2_KDC
+    ok 9 apache-2.4: freetds: KERBEROS_2_ADMIN_SERVER
+    ok 10 apache-2.4: freetds: KERBEROS_3_REALM
+    ok 11 apache-2.4: freetds: KERBEROS_3_DOMAIN
+    ok 12 apache-2.4: freetds: KERBEROS_3_KDC
+    ok 13 apache-2.4: freetds: KERBEROS_3_ADMIN_SERVER
 
 ## License
 
