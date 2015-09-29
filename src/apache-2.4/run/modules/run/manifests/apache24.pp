@@ -85,4 +85,6 @@ class run::apache24 {
   }
 
   bash_exec { 'mkdir -p /apache/data': }
+
+  bash_exec { 'rm -rf /var/run/apache2/apache2.pid': }
 }
