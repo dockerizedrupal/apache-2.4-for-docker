@@ -57,7 +57,7 @@ export FACTER_GROUP_ID="${GROUP_ID}"
 export FACTER_KERBEROS_DEFAULT_REALM="${KERBEROS_DEFAULT_REALM}"
 
 for VARIABLE in $(env); do
-  if [[ "${VARIABLE}" =~ ^KERBEROS_[[:digit:]]_REALM=.*$ ]]; then
+  if [[ "${VARIABLE}" =~ ^KERBEROS_[[:digit:]]+_REALM=.*$ ]]; then
     i="$(echo ${VARIABLE} | awk -F '_' '{ print $2 }')"
 
     KERBEROS_REALM="KERBEROS_${i}_REALM"

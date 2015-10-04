@@ -1,5 +1,5 @@
 apache:
-  image: dockerizedrupal/apache-2.4:1.1.1
+  image: dockerizedrupal/apache-2.4:1.1.2
   hostname: apache
   ports:
     - "80:80"
