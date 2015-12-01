@@ -1,6 +1,7 @@
 class build::apache24 {
   require build::apache24::packages
   require build::apache24::supervisor
+  require build::apache24::logs
 
   bash_exec { 'usermod -d /apache/data www-data': }
 
@@ -11,9 +12,7 @@ class build::apache24 {
   bash_exec { 'a2enmod ssl': }
   bash_exec { 'a2enmod headers': }
 
-  file { '/var/www/index.html':
-    ensure => absent
-  }
+  bash_exec { 'rm -rf /var/www': }
 
   file { '/etc/apache2/sites-enabled/000-default.conf':
     ensure => absent
@@ -23,18 +22,6 @@ class build::apache24 {
     ensure => present,
     source => 'puppet:///modules/build/etc/apache2/envvars',
     mode => 755
-  }
-
-  file { '/etc/apache2/conf-available/logs.conf':
-    ensure => present,
-    source => 'puppet:///modules/build/etc/apache2/conf-available/logs.conf',
-    mode => 644
-  }
-
-  file { '/etc/apache2/conf-enabled/logs.conf':
-    ensure => link,
-    target => '/etc/apache2/conf-available/logs.conf',
-    require => File['/etc/apache2/conf-available/logs.conf']
   }
 
   file { '/etc/apache2/conf-available/security.conf':
