@@ -18,6 +18,10 @@ class build::apache24 {
     ensure => absent
   }
 
+  file { '/etc/apache2/conf-enabled/other-vhosts-access-log.conf':
+    ensure => absent
+  }
+
   file { '/etc/apache2/envvars':
     ensure => present,
     source => 'puppet:///modules/build/etc/apache2/envvars',
