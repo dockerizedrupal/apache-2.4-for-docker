@@ -1,4 +1,6 @@
 class build::apache24::logs {
+  require build::apache24::packages
+
   file { '/etc/apache2/conf-available/logs.conf':
     ensure => present,
     source => 'puppet:///modules/build/etc/apache2/conf-available/logs.conf',

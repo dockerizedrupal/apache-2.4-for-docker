@@ -35,15 +35,15 @@ This project is part of the [Dockerized Drupal](https://dockerizedrupal.com/) in
       -e USER_ID="" \
       -e GROUP_ID="" \
       -d \
-      dockerizedrupal/apache-2.4:1.1.5
+      dockerizedrupal/apache-2.4:1.1.6
 
 ## Build the image
 
     TMP="$(mktemp -d)" \
       && git clone https://github.com/dockerizedrupal/docker-apache-2.4.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 1.1.5 \
-      && sudo docker build -t dockerizedrupal/apache-2.4:1.1.5 . \
+      && git checkout 1.1.6 \
+      && sudo docker build -t dockerizedrupal/apache-2.4:1.1.6 . \
       && cd -
 
 ## Changing the container behaviour on runtime through environment variables
