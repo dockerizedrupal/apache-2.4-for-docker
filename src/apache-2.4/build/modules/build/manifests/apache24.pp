@@ -1,7 +1,8 @@
 class build::apache24 {
   require build::apache24::packages
   require build::apache24::supervisor
-  require build::apache24::logs
+
+  include build::apache24::logs
 
   bash_exec { 'usermod -d /apache/data www-data': }
 
