@@ -13,7 +13,7 @@ MEMORY_SIZE = 512
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/trusty64"
 
-  config.vm.hostname = "apache"
+  config.vm.hostname = "php"
 
   config.vm.provider "virtualbox" do |v|
     name = "dockerizedrupal-docker-apache-2-4-" + VERSION
@@ -57,7 +57,7 @@ Vagrant.configure("2") do |config|
 
         sed -i "s/^start on (local-filesystems and net-device-up IFACE!=lo)/start on vagrant-ready/" /etc/init/docker.conf
 
-        usermod -aG docker vagrant
+        usermod -aG docker container
       }
 
       docker_compose_install() {
