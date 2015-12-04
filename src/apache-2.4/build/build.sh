@@ -3,9 +3,9 @@
 set -e
 set -x
 
+# User
 apt-get update
 
-# User
 groupadd -o -g $(id -g www-data) container
 
 useradd -m -o -s /bin/bash -u $(id -u www-data) -g $(id -g www-data) container
