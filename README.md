@@ -12,7 +12,7 @@ This project is part of the [Dockerized Drupal](https://dockerizedrupal.com/) in
       -v /apache/data \
       -v /apache/ssl \
       --entrypoint /bin/echo \
-      dockerizedrupal/apache-2.4:1.1.7 "Data-only container for Apache."
+      dockerizedrupal/apache-2.4:1.2.0 "Data-only container for Apache."
 
     CONTAINER="apache" && sudo docker run \
       --name "${CONTAINER}" \
@@ -41,15 +41,15 @@ This project is part of the [Dockerized Drupal](https://dockerizedrupal.com/) in
       -e USER_ID="" \
       -e GROUP_ID="" \
       -d \
-      dockerizedrupal/apache-2.4:1.1.7
+      dockerizedrupal/apache-2.4:1.2.0
 
 ## Build the image
 
     TMP="$(mktemp -d)" \
       && git clone https://github.com/dockerizedrupal/docker-apache-2.4.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 1.1.7 \
-      && sudo docker build -t dockerizedrupal/apache-2.4:1.1.7 . \
+      && git checkout 1.2.0 \
+      && sudo docker build -t dockerizedrupal/apache-2.4:1.2.0 . \
       && cd -
 
 ## Changing the container behaviour on runtime through environment variables
