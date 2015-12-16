@@ -34,7 +34,7 @@ This project is part of the [Dockerized Drupal](https://dockerizedrupal.com/) in
       -e HSTS="Off" \
       -e HSTS_MAX_AGE="31536000" \
       -e HSTS_PRELOAD="Off" \
-      -e HSTS_INCLUDE_SUBDOAMINS="Off" \
+      -e HSTS_INCLUDE_SUBDOMAINS="Off" \
       -e HTTP_BASIC_AUTH="Off" \
       -e HTTP_BASIC_AUTH_USERNAME="container" \
       -e HTTP_BASIC_AUTH_PASSWORD="" \
