@@ -21,6 +21,7 @@ This project is part of the [Dockerized Drupal](https://dockerizedrupal.com/) in
       -p 443:443 \
       --volumes-from apache-data \
       -e SERVER_NAME="localhost" \
+      -e DOCUMENT_ROOT="/apache/data" \
       -e TIMEZONE="Etc/UTC" \
       -e TIMEOUT="300" \
       -e PROTOCOLS="https,http" \

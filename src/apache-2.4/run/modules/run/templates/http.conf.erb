@@ -1,7 +1,7 @@
 <VirtualHost *:80>
-  DocumentRoot /apache/data
+  DocumentRoot <%= @document_root %>
 
-  <Directory "/apache/data">
+  <Directory "<%= @document_root %>">
 <% if @indexes == "On" -%>
     Options +Indexes
 <% else -%>

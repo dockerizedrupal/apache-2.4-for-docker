@@ -1,4 +1,4 @@
-<Directory "/apache/data">
+<Directory "<%= @document_root %>">
   AuthType Kerberos
 
   KrbAuthRealms <%= @kerberos_default_realm %>

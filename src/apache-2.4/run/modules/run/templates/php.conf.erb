@@ -1,3 +1,3 @@
 <IfModule mod_proxy_fcgi.c>
-  ProxyPassMatch "^/(.*\.php(/.*)?)$" "fcgi://<%= @php_host %>/apache/data/" timeout=<%= @timeout %>
+  ProxyPassMatch "^/(.*\.php(/.*)?)$" "fcgi://<%= @php_host %><%= @document_root %>/" timeout=<%= @timeout %>
 </IfModule>

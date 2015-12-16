@@ -4,8 +4,6 @@ class build::apache24 {
 
   include build::apache24::logs
 
-  bash_exec { 'usermod -d /apache/data www-data': }
-
   bash_exec { 'a2enmod actions': }
   bash_exec { 'a2enmod proxy_fcgi': }
   bash_exec { 'a2enmod vhost_alias': }

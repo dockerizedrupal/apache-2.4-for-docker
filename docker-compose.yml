@@ -8,6 +8,7 @@ apache:
     - apache-data
   environment:
     - SERVER_NAME=localhost
+    - DOCUMENT_ROOT=/apache/data
     - TIMEZONE=Etc/UTC
     - TIMEOUT=300
     - PROTOCOLS=https,http
