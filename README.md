@@ -31,6 +31,10 @@ This project is part of the [Dockerized Drupal](https://dockerizedrupal.com/) in
       -e KERBEROS_1_DOMAIN="" \
       -e KERBEROS_1_KDC="" \
       -e KERBEROS_1_ADMIN_SERVER="" \
+      -e HSTS="Off" \
+      -e HSTS_MAX_AGE="31536000" \
+      -e HSTS_PRELOAD="Off" \
+      -e HSTS_INCLUDE_SUBDOAMINS="Off" \
       -e HTTP_BASIC_AUTH="Off" \
       -e HTTP_BASIC_AUTH_USERNAME="container" \
       -e HTTP_BASIC_AUTH_PASSWORD="" \

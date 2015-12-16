@@ -19,7 +19,17 @@
 <% end -%>
     </Directory>
 
-    Header add Strict-Transport-Security "max-age=31536000; includeSubDomains"
+<% if @hsts == "On" -%>
+<% if @hsts_include_subdomains == "On" and @hsts_preload == "On" -%>
+    Header add Strict-Transport-Security "max-age=<%= @hsts_max_age %>; includeSubDomains; preload"
+<% elsif @hsts_include_subdomains == "On" -%>
+    Header add Strict-Transport-Security "max-age=<%= @hsts_max_age %>; includeSubDomains"
+<% elsif @hsts_preload == "On" -%>
+    Header add Strict-Transport-Security "max-age=<%= @hsts_max_age %>; preload"
+<% else -%>
+    Header add Strict-Transport-Security "max-age=<%= @hsts_max_age %>"
+<% end -%>
+<% end -%>
 
     SSLEngine on
     SSLProtocol ALL -SSLv2 -SSLv3
