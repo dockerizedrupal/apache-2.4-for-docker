@@ -11,7 +11,8 @@ This project is part of the [Dockerized Drupal](https://dockerizedrupal.com/) in
       -h "${CONTAINER}" \
       -v /apache/data \
       -v /apache/ssl \
-      dockerizedrupal/data:1.1.0
+      --entrypoint /bin/echo \
+      dockerizedrupal/apache-2.4:1.1.7 "Data-only container for Apache."
 
     CONTAINER="apache" && sudo docker run \
       --name "${CONTAINER}" \

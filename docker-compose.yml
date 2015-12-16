@@ -23,8 +23,9 @@ apache:
     - USER_ID=
     - GROUP_ID=
 apache-data:
-  image: dockerizedrupal/data:1.1.0
+  image: dockerizedrupal/apache-2.4:1.1.7
   hostname: apache-data
+  entrypoint: ["/bin/echo", "Data-only container for Apache."]
   volumes:
     - /apache/data
     - /apache/ssl
