@@ -1,7 +1,7 @@
 class build::apache24::supervisor {
-  file { '/etc/supervisor/conf.d/apache-2.4.conf':
+  file { '/etc/supervisor/conf.d/apache.conf':
     ensure => present,
-    source => 'puppet:///modules/build/etc/supervisor/conf.d/apache-2.4.conf',
+    source => 'puppet:///modules/build/etc/supervisor/conf.d/apache.conf',
     mode => 644
   }
 }

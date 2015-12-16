@@ -13,13 +13,13 @@ class build::apache24::logs {
     require => File['/etc/apache2/conf-available/logs.conf']
   }
 
-  file { '/var/log/apache2/access.log':
+  file { '/var/log/apache2/stdout.log':
     ensure => link,
     target => '/dev/stdout',
     force => true
   }
 
-  file { '/var/log/apache2/error.log':
+  file { '/var/log/apache2/stderr.log':
     ensure => link,
     target => '/dev/stderr',
     force => true
