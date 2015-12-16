@@ -108,26 +108,28 @@ fi
 
 export FACTER_DOCUMENT_ROOT="${DOCUMENT_ROOT}"
 
-if [ -z "${HSTS}" ]; then
-  HSTS="Off"
+if [ "${PROTOCOLS}" == "https" ]; then
+  if [ -z "${HSTS}" ]; then
+    HSTS="Off"
+  fi
+
+  export FACTER_HSTS="${HSTS}"
+
+  if [ -z "${HSTS_MAX_AGE}" ]; then
+    HSTS_MAX_AGE="31536000"
+  fi
+
+  export FACTER_HSTS_MAX_AGE="${HSTS_MAX_AGE}"
+
+  if [ -z "${HSTS_PRELOAD}" ]; then
+    HSTS_PRELOAD="Off"
+  fi
+
+  export FACTER_HSTS_PRELOAD="${HSTS_PRELOAD}"
+
+  if [ -z "${HSTS_INCLUDE_SUBDOMAINS}" ]; then
+    HSTS_INCLUDE_SUBDOMAINS="Off"
+  fi
+
+  export FACTER_HSTS_INCLUDE_SUBDOMAINS="${HSTS_INCLUDE_SUBDOMAINS}"
 fi
-
-export FACTER_HSTS="${HSTS}"
-
-if [ -z "${HSTS_MAX_AGE}" ]; then
-  HSTS_MAX_AGE="31536000"
-fi
-
-export FACTER_HSTS_MAX_AGE="${HSTS_MAX_AGE}"
-
-if [ -z "${HSTS_PRELOAD}" ]; then
-  HSTS_PRELOAD="Off"
-fi
-
-export FACTER_HSTS_PRELOAD="${HSTS_PRELOAD}"
-
-if [ -z "${HSTS_INCLUDE_SUBDOAMINS}" ]; then
-  HSTS_INCLUDE_SUBDOAMINS="Off"
-fi
-
-export FACTER_HSTS_INCLUDE_SUBDOAMINS="${HSTS_INCLUDE_SUBDOAMINS}"
