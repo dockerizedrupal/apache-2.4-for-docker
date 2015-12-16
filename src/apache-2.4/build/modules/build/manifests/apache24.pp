@@ -27,6 +27,14 @@ class build::apache24 {
     ensure => absent
   }
 
+  file { '/var/log/apache2/access.log':
+    ensure => absent
+  }
+
+  file { '/var/log/apache2/error.log':
+    ensure => absent
+  }
+
   file { '/etc/apache2/envvars':
     ensure => present,
     source => 'puppet:///modules/build/etc/apache2/envvars',
