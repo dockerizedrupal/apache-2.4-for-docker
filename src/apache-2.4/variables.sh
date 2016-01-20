@@ -134,7 +134,6 @@ if [ "${PROTOCOLS}" == "https" ]; then
   export FACTER_HSTS_INCLUDE_SUBDOMAINS="${HSTS_INCLUDE_SUBDOMAINS}"
 fi
 
-
 if [ -z "${ESTEID}" ]; then
   ESTEID="Off"
 fi

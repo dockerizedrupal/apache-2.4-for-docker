@@ -39,7 +39,7 @@ This project is part of the [Dockerized Drupal](https://dockerizedrupal.com/) in
       -e HTTP_BASIC_AUTH_USERNAME="container" \
       -e HTTP_BASIC_AUTH_PASSWORD="" \
       -e ESTEID="Off" \
-      -e ESTEID_URL="Off" \
+      -e ESTEID_URL="" \
       -e USER_ID="" \
       -e GROUP_ID="" \
       -d \
