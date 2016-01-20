@@ -38,5 +38,18 @@
 
     SSLCertificateFile /apache/ssl/certs/apache-2.4.crt
     SSLCertificateKeyFile /apache/ssl/private/apache-2.4.key
+<% if @esteid == "On" -%>
+    SSLCACertificateFile /apache/ssl/certs/id.crt
+    SSLCARevocationPath /apache/ssl/revocation/
+    SSLCARevocationCheck leaf
+    SSLCertificateChainFile /apache/ssl/certs/id.crt
+
+    <LocationMatch "<%= @esteid_url %>">
+      SSLOptions +StdEnvVars +ExportCertData
+      SSLRequireSSL
+      SSLVerifyClient require
+      SSLVerifyDepth 2
+    </LocationMatch>
+<% end -%>
   </VirtualHost>
 </IfModule>

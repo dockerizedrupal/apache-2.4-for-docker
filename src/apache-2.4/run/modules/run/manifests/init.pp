@@ -8,4 +8,8 @@ class run {
   if $kerberos_1_realm {
     include run::kerberos
   }
+
+  if $esteid == "On" {
+    include run::esteid
+  }
 }
