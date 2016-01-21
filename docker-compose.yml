@@ -1,5 +1,5 @@
 apache:
-  image: dockerizedrupal/apache-2.4:1.2.1
+  image: dockerizedrupal/apache-2.4:1.2.2
   hostname: apache
   ports:
     - "80:80"
@@ -26,11 +26,12 @@ apache:
     - HTTP_BASIC_AUTH_USERNAME=container
     - HTTP_BASIC_AUTH_PASSWORD=
     - ESTEID=Off
+    - ESTEID_CA_REVOCATION_LIST=Off
     - ESTEID_URL=
     - USER_ID=
     - GROUP_ID=
 apache-data:
-  image: dockerizedrupal/apache-2.4:1.2.1
+  image: dockerizedrupal/apache-2.4:1.2.2
   hostname: apache-data
   entrypoint: ["/bin/echo", "Data-only container for Apache."]
   volumes:

@@ -40,8 +40,10 @@
     SSLCertificateKeyFile /apache/ssl/private/apache-2.4.key
 <% if @esteid == "On" -%>
     SSLCACertificateFile /apache/ssl/certs/id.crt
+<% if @esteid_ca_revocation_list == "On" -%>
     SSLCARevocationPath /apache/ssl/revocation/
     SSLCARevocationCheck leaf
+<% end -%>
     SSLCertificateChainFile /apache/ssl/certs/id.crt
 
     <LocationMatch "<%= @esteid_url %>">
