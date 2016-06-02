@@ -1,3 +1,5 @@
 <IfModule mod_proxy_fcgi.c>
+  SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+
   ProxyPassMatch "^/(.*\.php(/.*)?)$" "fcgi://<%= @php_host %><%= @document_root %>/" timeout=<%= @timeout %>
 </IfModule>

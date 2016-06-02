@@ -12,7 +12,7 @@ A Docker image for [Apache HTTP Server](http://httpd.apache.org/) version 2.4.
       -v /apache/data \
       -v /apache/ssl \
       --entrypoint /bin/echo \
-      dockerizedrupal/apache-2.4:1.2.2 "Data-only container for Apache."
+      dockerizedrupal/apache-2.4:1.2.3 "Data-only container for Apache."
 
     CONTAINER="apache" && sudo docker run \
       --name "${CONTAINER}" \
@@ -44,15 +44,15 @@ A Docker image for [Apache HTTP Server](http://httpd.apache.org/) version 2.4.
       -e USER_ID="" \
       -e GROUP_ID="" \
       -d \
-      dockerizedrupal/apache-2.4:1.2.2
+      dockerizedrupal/apache-2.4:1.2.3
 
 ## Build the image
 
     TMP="$(mktemp -d)" \
       && git clone https://github.com/dockerizedrupal/docker-apache-2.4.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 1.2.2 \
-      && sudo docker build -t dockerizedrupal/apache-2.4:1.2.2 . \
+      && git checkout 1.2.3 \
+      && sudo docker build -t dockerizedrupal/apache-2.4:1.2.3 . \
       && cd -
 
 ## Changing the container behaviour on runtime through environment variables
