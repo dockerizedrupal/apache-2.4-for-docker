@@ -151,3 +151,9 @@ fi
 export FACTER_ESTEID_CA_REVOCATION_LIST="${ESTEID_CA_REVOCATION_LIST}"
 
 export FACTER_ESTEID_URL="${ESTEID_URL}"
+
+if [ -z "${NO_GZIP}" ]; then
+  NO_GZIP="Off"
+fi
+
+export FACTER_NO_GZIP="${NO_GZIP}"

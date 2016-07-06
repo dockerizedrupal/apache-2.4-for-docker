@@ -1,6 +1,12 @@
 <VirtualHost *:80>
   DocumentRoot <%= @document_root %>
 
+<% if @no_gzip == "On" -%>
+  SetEnv no-gzip 1
+<% else -%>
+  SetEnv no-gzip 0
+<% end -%>
+
   <Directory "<%= @document_root %>">
 <% if @indexes == "On" -%>
     Options +Indexes

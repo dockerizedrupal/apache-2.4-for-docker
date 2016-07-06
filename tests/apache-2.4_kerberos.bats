@@ -9,7 +9,7 @@ container() {
 setup() {
   docker-compose -f "${DOCKER_COMPOSE_FILE}" up -d
 
-  sleep 10
+  sleep 20
 }
 
 teardown() {
