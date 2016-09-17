@@ -1,6 +1,4 @@
-VERSION = "1.2.4"
-
-require 'yaml'
+VERSION = "2.0.0"
 
 required_plugins = %w(vagrant-vbguest)
 
@@ -16,7 +14,7 @@ Vagrant.configure("2") do |config|
   config.vm.hostname = "apache"
 
   config.vm.provider "virtualbox" do |v|
-    name = "dockerizedrupal-docker-apache-2-4-" + VERSION
+    name = "dockerizedrupal-apache-2.4-for-docker-" + VERSION
 
     name.gsub!(".", "-")
 
