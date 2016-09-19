@@ -12,4 +12,8 @@ class run {
   if $esteid == "On" {
     include run::esteid
   }
+
+  if $certbot == "On" {
+    include run::certbot
+  }
 }

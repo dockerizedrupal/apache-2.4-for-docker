@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+cp /etc/letsencrypt/live/<%= @server_name %>/privkey.pem /apache/ssl/private/apache-2.4.key
+cp /etc/letsencrypt/live/<%= @server_name %>/fullchain.pem /apache/ssl/certs/apache-2.4.crt
+
+supervisorctl restart apache

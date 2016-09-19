@@ -1,0 +1,1 @@
+0 0 */30 * * root certbot-auto renew --post-hook "certbot_renew_certificate_post_hook" >> /var/log/cron.log 2>&1

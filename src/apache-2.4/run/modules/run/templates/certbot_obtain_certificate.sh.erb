@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if [ ! -f /apache/ssl/certs/apache-2.4.crt ]; then
+  sleep 20
+
+  certbot-auto certonly --non-interactive --agree-tos --webroot --email <%= @certbot_email %> --webroot-path <%= @document_root %> --domain <%= @server_name %>
+
+  if [ "${?}" -eq 0 ]; then
+    certbot_renew_certificate_post_hook
+  fi
+fi

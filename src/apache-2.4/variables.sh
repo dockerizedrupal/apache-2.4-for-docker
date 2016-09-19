@@ -157,3 +157,11 @@ if [ -z "${NO_GZIP}" ]; then
 fi
 
 export FACTER_NO_GZIP="${NO_GZIP}"
+
+if [ -z "${CERTBOT}" ]; then
+  CERTBOT="Off"
+fi
+
+export FACTER_CERTBOT="${CERTBOT}"
+
+export FACTER_CERTBOT_EMAIL="${CERTBOT_EMAIL}"

@@ -29,6 +29,8 @@ apache:
     - ESTEID_CA_REVOCATION_LIST=Off
     - ESTEID_URL=
     - NO_GZIP=Off
+    - CERTBOT=Off
+    - CERTBOT_EMAIL=
     - USER_ID=
     - GROUP_ID=
 apache-data:
