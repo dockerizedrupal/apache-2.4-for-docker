@@ -1,7 +1,9 @@
 class run::certbot {
   if $https {
+    include run::certbot::supervisor
+
     if ! file_exists('/apache/ssl/certs/apache-2.4.crt') {
-      require run::apache24::ssl
+      include run::apache24::ssl
     }
 
     file { '/usr/local/bin/certbot_renew_certificate_post_hook':
