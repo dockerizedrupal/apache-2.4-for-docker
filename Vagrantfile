@@ -1,4 +1,4 @@
-VERSION = "2.0.0"
+VERSION = "1.2.4"
 
 required_plugins = %w(vagrant-vbguest)
 
