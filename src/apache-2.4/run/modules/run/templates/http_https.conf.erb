@@ -24,16 +24,16 @@
 <% end -%>
   </Directory>
 
-  SSLProxyEngine on
+  SSLProxyEngine on
   ProxyRequests Off
 
-   <Proxy *>
-     Order deny,allow
-     Allow from all
-   </Proxy>
+  <Proxy *>
+    Order deny,allow
+    Allow from all
+  </Proxy>
 
-   ProxyPass <%= @proxy_1_pass %>
-   ProxyPassReverse <%= @proxy_1_pass_reverse %>
-   ProxyPass <%= @proxy_2_pass %>
-   ProxyPassReverse <%= @proxy_2_pass_reverse %>
+  ProxyPass <%= @proxy_1_pass %>
+  ProxyPassReverse <%= @proxy_1_pass_reverse %>
+  ProxyPass <%= @proxy_2_pass %>
+  ProxyPassReverse <%= @proxy_2_pass_reverse %>
 </VirtualHost>
