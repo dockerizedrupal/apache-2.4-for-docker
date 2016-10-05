@@ -30,6 +30,7 @@
   <Proxy *>
     Order deny,allow
     Allow from all
+    RequestHeader unset Authorization
   </Proxy>
 
   ProxyPass <%= @proxy_1_pass %>
