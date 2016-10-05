@@ -10,6 +10,7 @@ class build::apache24 {
   bash_exec { 'a2enmod rewrite': }
   bash_exec { 'a2enmod ssl': }
   bash_exec { 'a2enmod headers': }
+  bash_exec { 'a2enmod proxy_http': }
 
   bash_exec { 'rm -rf /var/www': }
 
