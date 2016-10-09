@@ -10,7 +10,7 @@ A Docker image for [Apache HTTP Server](http://httpd.apache.org/) version 2.4.
       -v /apache/data \
       -v /apache/ssl \
       --entrypoint /bin/echo \
-      dockerizedrupal/apache-2.4:1.2.7 "Data-only container for Apache."
+      dockerizedrupal/apache-2.4:1.2.6 "Data-only container for Apache."
 
     CONTAINER="apache" && sudo docker run \
       --name "${CONTAINER}" \
@@ -40,18 +40,23 @@ A Docker image for [Apache HTTP Server](http://httpd.apache.org/) version 2.4.
       -e ESTEID_CA_REVOCATION_LIST="Off" \
       -e ESTEID_URL="" \
       -e NO_GZIP="Off" \
+      -e CERTBOT="Off" \
+      -e CERTBOT_EMAIL="" \
+      -e PROXY="Off" \
+      -e PROXY_1_PASS="" \
+      -e PROXY_1_PASS_REVERSE="" \
       -e USER_ID="" \
       -e GROUP_ID="" \
       -d \
-      dockerizedrupal/apache-2.4:1.2.7
+      dockerizedrupal/apache-2.4:1.2.6
 
 ## Build the image
 
     TMP="$(mktemp -d)" \
       && git clone https://github.com/dockerizedrupal/apache-2.4-for-docker.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 1.2.7 \
-      && sudo docker build -t dockerizedrupal/apache-2.4:1.2.7 . \
+      && git checkout 1.2.6 \
+      && sudo docker build -t dockerizedrupal/apache-2.4:1.2.6 . \
       && cd -
 
 ## Tests
