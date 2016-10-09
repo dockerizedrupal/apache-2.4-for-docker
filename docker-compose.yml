@@ -1,5 +1,5 @@
 apache:
-  image: dockerizedrupal/apache-2.4:1.2.6
+  image: dockerizedrupal/apache-2.4:1.2.7
   hostname: apache
   ports:
     - "80:80"
@@ -31,10 +31,13 @@ apache:
     - NO_GZIP=Off
     - CERTBOT=Off
     - CERTBOT_EMAIL=
+    - PROXY=Off
+    - PROXY_1_PASS=
+    - PROXY_1_PASS_REVERSE=
     - USER_ID=
     - GROUP_ID=
 apache-data:
-  image: dockerizedrupal/apache-2.4:1.2.6
+  image: dockerizedrupal/apache-2.4:1.2.7
   hostname: apache-data
   entrypoint: ["/bin/echo", "Data-only container for Apache."]
   volumes:

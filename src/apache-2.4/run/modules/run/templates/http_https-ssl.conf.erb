@@ -60,6 +60,7 @@
     </LocationMatch>
 <% end -%>
 
+<% if @proxy == "On" -%>
     SSLProxyEngine on
     ProxyRequests Off
 
@@ -73,5 +74,6 @@
     ProxyPassReverse <%= @proxy_1_pass_reverse %>
     ProxyPass <%= @proxy_2_pass %>
     ProxyPassReverse <%= @proxy_2_pass_reverse %>
+<% end -%>
   </VirtualHost>
 </IfModule>
