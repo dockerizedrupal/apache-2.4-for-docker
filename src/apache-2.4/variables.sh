@@ -167,10 +167,27 @@ export FACTER_CERTBOT="${CERTBOT}"
 export FACTER_CERTBOT_EMAIL="${CERTBOT_EMAIL}"
 
 if [ -z "${PROXY}" ]; then
-  HTTP_PROXY="Off"
+  PROXY="Off"
 fi
 
-export FACTER_PROXY_1_PASS="${PROXY_1_PASS}"
-export FACTER_PROXY_1_PASS_REVERSE="${PROXY_1_PASS_REVERSE}"
-export FACTER_PROXY_2_PASS="${PROXY_2_PASS}"
-export FACTER_PROXY_2_PASS_REVERSE="${PROXY_2_PASS_REVERSE}"
+export FACTER_PROXY="${PROXY}"
+
+for VARIABLE in $(env); do
+  if [[ "${VARIABLE}" =~ ^PROXY_[[:digit:]]+_PASS=.*$ ]]; then
+    i="$(echo ${VARIABLE} | awk -F '_' '{ print $2 }')"
+
+    PROXY_PASS="PROXY_${i}_PASS"
+    PROXY_PASS_REVERSE="PROXY_${i}_PASS_REVERSE"
+
+    if [ -z "${!PROXY_PASS}" ]; then
+      continue
+    fi
+
+    if [ -z "${!PROXY_PASS_REVERSE}" ]; then
+      continue
+    fi
+
+    export "FACTER_${PROXY_PASS}=${!PROXY_PASS}"
+    export "FACTER_${PROXY_PASS_REVERSE}=${!PROXY_PASS_REVERSE}"
+  fi
+done
