@@ -34,9 +34,12 @@
     RequestHeader unset Authorization
   </Proxy>
 
-  ProxyPass <%= @proxy_1_pass %>
-  ProxyPassReverse <%= @proxy_1_pass_reverse %>
-  ProxyPass <%= @proxy_2_pass %>
-  ProxyPassReverse <%= @proxy_2_pass_reverse %>
+<% scope.to_hash.keys.each do |variable| -%>
+<% if (variable =~ /^proxy_[[:digit:]]+_pass$/) -%>
+<% i = variable.split('_')[1] -%>
+  ProxyPass <%= eval("@proxy_#{i}_pass") %>
+  ProxyPassReverse <%= eval("@proxy_#{i}_pass_reverse") %>
+<% end -%>
+<% end -%>
 <% end -%>
 </VirtualHost>
