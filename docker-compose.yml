@@ -1,5 +1,5 @@
 apache:
-  image: dockerizedrupal/apache-2.4:1.2.8
+  image: dockerizedrupal/apache-2.4:1.2.9
   hostname: apache
   ports:
     - "80:80"
@@ -11,7 +11,7 @@ apache:
     - DOCUMENT_ROOT=/apache/data
     - TIMEZONE=Etc/UTC
     - TIMEOUT=300
-    - PROTOCOLS=https,http
+    - PROTOCOLS=https2,http
     - INDEXES=Off
     - KERBEROS_DEFAULT_REALM=
     - KERBEROS_1_REALM=
@@ -37,7 +37,7 @@ apache:
     - USER_ID=
     - GROUP_ID=
 apache-data:
-  image: dockerizedrupal/apache-2.4:1.2.8
+  image: dockerizedrupal/apache-2.4:1.2.9
   hostname: apache-data
   entrypoint: ["/bin/echo", "Data-only container for Apache."]
   volumes:

@@ -3,6 +3,7 @@ class build::apache24 {
   require build::apache24::supervisor
 
   include build::apache24::logs
+  include build::apache24::https2
 
   bash_exec { 'a2enmod actions': }
   bash_exec { 'a2enmod proxy_fcgi': }
