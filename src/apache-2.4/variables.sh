@@ -163,6 +163,12 @@ fi
 
 export FACTER_NO_GZIP="${NO_GZIP}"
 
+if [ -z "${DEFLATE}" ]; then
+  DEFLATE="Off"
+fi
+
+export FACTER_DEFLATE="${DEFLATE}"
+
 if [ -z "${CERTBOT}" ]; then
   CERTBOT="Off"
 fi

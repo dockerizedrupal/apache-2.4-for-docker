@@ -21,4 +21,11 @@
     Require all granted
 <% end -%>
   </Directory>
+
+<% if @deflate == "On" -%>
+  SetOutputFilter DEFLATE
+  SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+  SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
+  Header append Vary User-Agent
+<% end -%>
 </VirtualHost>
