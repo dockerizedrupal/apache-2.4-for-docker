@@ -4,8 +4,6 @@
 
 <% if @no_gzip == "On" -%>
   SetEnv no-gzip 1
-<% else -%>
-  SetEnv no-gzip 0
 <% end -%>
 
     <Directory "<%= @document_root %>">
