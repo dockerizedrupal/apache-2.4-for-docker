@@ -1,6 +1,6 @@
 {
   "name": "apache-2.4-for-docker",
-  "version": "1.2.11",
+  "version": "1.2.12",
   "repository": {
     "type": "git",
     "url": "https://github.com/dockerizedrupal/apache-2.4-for-docker.git"
